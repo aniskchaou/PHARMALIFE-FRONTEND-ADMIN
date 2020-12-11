@@ -1,0 +1,121 @@
+
+<aside id="left-panel" class="left-panel">
+
+   
+    <nav class="navbar navbar-expand-sm navbar-default">
+  
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="./"><img src="assets/images/logo.png" alt="Logo"></a>
+            <a class="navbar-brand hidden" href="./"><img src="assets/images/logo2.png" alt="Logo"></a>
+        </div>
+  
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a routerLink="/"> <i class="menu-icon fa fa-dashboard"></i>Tableau de bord </a>
+                </li>
+               
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Facture d'achat</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-puzzle-piece"></i><a >Nouvelle facture</a></li>
+                        <li><i class="fa fa-id-badge"></i><a routerLink="/invoice">Gérer la facture</a></li>
+                      
+                    </ul>
+                </li>
+                <li class="menu-item-has-children active dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Client</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-table"></i><a >Ajouter un client</a></li>
+                        <li><i class="fa fa-table"></i><a routerLink="/client">Gérer des client</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Médicament</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-th"></i><a routerLink="/category">Catégorie</a></li>
+                        <li><i class="menu-icon fa fa-th"></i><a routerLink="/type">Type médecine</a></li>
+                        <li><i class="menu-icon fa fa-th"></i><a >Ajouter un médicament</a></li>
+                        <li><i class="menu-icon fa fa-th"></i><a routerLink="/medicament">Gérer les médicament</a></li>
+                    </ul>
+                </li>
+  
+               
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Fabricant</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-fort-awesome"></i><a >Ajouter un fabricant</a></li>
+                        <li><i class="menu-icon ti-themify-logo"></i><a routerLink="/constructor">Gérer le fabricant</a></li>
+                    </ul>
+                </li>
+               
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Achat</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-line-chart"></i><a >Ajouter un achat</a></li>
+                        <li><i class="menu-icon fa fa-area-chart"></i><a routerLink="/buy">Gérer l'achat</a></li>
+                       
+                    </ul>
+                </li>
+  
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Stock</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-map-o"></i><a routerLink="/buy">Rapport de stock</a></li>
+                       
+                    </ul>
+                </li>
+              
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Revenir</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-sign-in"></i><a >Stock</a></li>
+                        <li><i class="menu-icon fa fa-sign-in"></i><a >Fabricant</a></li>
+                        <li><i class="menu-icon fa fa-paper-plane"></i><a >Gaspillage</a></li>
+                    </ul>
+                </li>
+  
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Rapport</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-sign-in"></i><a >Achat</a></li>
+                        <li><i class="menu-icon fa fa-sign-in"></i><a >Ventes</a></li>
+                        <li><i class="menu-icon fa fa-paper-plane"></i><a >Profit</a></li>
+                    </ul>
+                </li>
+  
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Fournisseur</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-sign-in"></i><a >Ajouter un fournisseur</a></li>
+                        <li><i class="menu-icon fa fa-sign-in"></i><a routerLink="/supplier">Gérer fournisseur</a></li>
+                        
+                    </ul>
+                </li>
+  
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Service</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-sign-in"></i><a >Ajouter un Service</a></li>
+                        <li><i class="menu-icon fa fa-sign-in"></i><a routerLink="/service">Gérer Service</a></li>
+                        
+                    </ul>
+                </li>
+  
+                 <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Réglages</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-sign-in"></i><a routerLink="/configuration">Générale</a></li>
+                        
+                        
+                    </ul>
+                </li>
+  
+  
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+  </aside><!-- /#left-panel -->

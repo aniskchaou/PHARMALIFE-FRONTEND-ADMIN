@@ -15,8 +15,12 @@ import { TypeComponent } from './content/type/type.component';
 import { SupplierComponent } from './content/supplier/supplier.component';
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
+import { DashboardComponent } from './content/dashboard/dashboard.component';
+import { LoginComponent } from './content/login/login.component';
+import { ConfigurationComponent } from './content/configuration/configuration.component';
 
 const routes:Routes=[
+  {path:'dashboard',component:DashboardComponent},
   {path:'invoice',component:InvoiceComponent},
   {path:'service',component:ServiceComponent},
   {path:'client',component:ClientComponent},
@@ -27,8 +31,10 @@ const routes:Routes=[
   {path:'stock',component:StockComponent},
   {path:'supplier',component:SupplierComponent},
   {path:'type',component:TypeComponent},
-  {path:'',redirectTo:'invoice',pathMatch:'full'},
-  {path:'**',redirectTo:'invoice',pathMatch:'full'}]
+  {path:'login',component:LoginComponent},
+  {path:'configuration',component:ConfigurationComponent},
+  {path:'',redirectTo:'login',pathMatch:'full'},
+  {path:'**',redirectTo:'login',pathMatch:'full'}]
 
 
 @NgModule({
@@ -44,7 +50,8 @@ const routes:Routes=[
     ServiceComponent,
     StockComponent,
     TypeComponent,
-    SupplierComponent
+    SupplierComponent,
+    ConfigurationComponent
   ],
   imports: [
     BrowserModule,
