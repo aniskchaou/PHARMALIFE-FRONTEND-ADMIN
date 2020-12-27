@@ -1,0 +1,238 @@
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Ajouter Medicament</strong>
+    </div>
+    <div class="card-body">
+<form action="https://pharmacyv5.bdtask.com/pharmacare-9.3_demo/Cproduct/insert_product" class="form-vertical" id="insert_product" name="insert_product" enctype="multipart/form-data" method="post" accept-charset="utf-8" novalidate="novalidate">
+    <input type="hidden" name="csrf_test_name" value="6ea5babaa8a9985f88b3a90fab3fbf4d">
+<div class="panel-body">
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="barcode_or_qrcode" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Code à barres ou QRcode  </font></font><i class="text-danger"></i></label>
+<div class="col-sm-8">
+<input class="form-control" name="product_id" type="text" id="product_id" placeholder="Code à barres ou QRcode " tabindex="1">
+</div>
+</div>
+
+</div>
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="product_name" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nom du médicament </font></font><i class="text-danger"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></i></label>
+<div class="col-sm-8">
+<input class="form-control" tabindex="1" name="product_name" type="text" id="product_name" placeholder="Nom du médicament" required="" aria-required="true">
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="strength" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Force </font></font><i class="text-danger"></i></label>
+<div class="col-sm-8">
+<input class="form-control" tabindex="1" name="strength" type="text" id="strength" placeholder="Force">
+</div>
+</div>
+</div>
+
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="generic_name" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nom générique   </font></font><i class="text-danger"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></i></label>
+<div class="col-sm-8">
+<input class="form-control" name="generic_name" type="text" id="generic_name" placeholder="Nom générique" tabindex="2" required="required" aria-required="true">
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="box_size" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Taille de la boîte </font></font><i class="text-danger"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></i></label>
+<div class="col-sm-8">
+<input class="form-control" name="box_size" type="text" id="box_size" placeholder="Taille de boîte" tabindex="3" min="0" required="required" aria-required="true">
+</div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="unit" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Unité   </font></font><i class="text-danger"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></i></label>
+<div class="col-sm-8">
+<select class="form-control select2-hidden-accessible" id="unit" name="unit" required="required" tabindex="-1" aria-hidden="true" aria-required="true">
+<option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sélectionnez l'unité</font></font></option>
+      
+<option value="pics "><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">photos </font></font></option>
+
+<option value="x"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></option>
+
+     
+</select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 315.656px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="4" aria-labelledby="select2-unit-container"><span class="select2-selection__rendered" id="select2-unit-container"><span class="select2-selection__placeholder"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sélectionnez l'option</font></font></span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="product_location" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Étagère de médecine</font></font></label>
+<div class="col-sm-8">
+<input class="form-control" tabindex="5" name="product_location" type="text" id="product_location" placeholder="Étagère de médecine">
+</div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="description" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Détails</font></font></label>
+<div class="col-sm-8">
+<textarea class="form-control" name="description" id="description" rows="3" tabindex="6" placeholder="Détails"></textarea>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-sm-6">
+<div class="form-group row">
+<label for="product_model" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Type de médicament </font></font><i class="text-danger"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></i></label>
+<div class="col-sm-8">
+<select class="form-control select2-hidden-accessible" id="category_id" name="type_name" required="required" tabindex="-1" aria-hidden="true" aria-required="true">
+<option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sélectionnez-en un</font></font></option>
+ 
+<option value="Tabulate "><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tabuler </font></font></option>
+
+<option value="cream"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">crème</font></font></option>
+
+ </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 315.656px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="7" aria-labelledby="select2-category_id-container"><span class="select2-selection__rendered" id="select2-category_id-container"><span class="select2-selection__placeholder"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sélectionnez l'option</font></font></span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+</div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="image" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Image </font></font></label>
+<div class="col-sm-8">
+<input type="file" tabindex="8" name="image" class="form-control" id="image">
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="category_id" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Catégorie</font></font></label>
+<div class="col-sm-8">
+<select class="form-control select2-hidden-accessible" id="category_id" name="category_id" tabindex="-1" aria-hidden="true">
+<option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sélectionnez-en un</font></font></option>
+ 
+<option value="10"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bol</font></font></option>
+
+<option value="3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Capsule</font></font></option>
+
+<option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Catégorie_1</font></font></option>
+
+<option value="7"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Crème</font></font></option>
+
+<option value="5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Comprimé dispersible</font></font></option>
+
+<option value="8"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gel</font></font></option>
+
+<option value="9"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Injection</font></font></option>
+
+<option value="11"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poudre</font></font></option>
+
+<option value="4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution de Resperitory</font></font></option>
+
+<option value="6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sachet</font></font></option>
+
+<option value="12"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Solution</font></font></option>
+
+<option value="2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">tablette</font></font></option>
+
+ </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 315.656px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="9" aria-labelledby="select2-category_id-container"><span class="select2-selection__rendered" id="select2-category_id-container"><span class="select2-selection__placeholder"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sélectionnez l'option</font></font></span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+</div>
+</div>
+</div>
+
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="image" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prix ​​de vente </font></font><i class="text-danger"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></i> </label>
+<div class="col-sm-8">
+<input class="form-control text-right" name="price" type="text" onkeyup="if (!window.__cfRLUnblockHandlers) return false; Checkprice()" required="required" id="price" placeholder="0,00" tabindex="10" min="0" aria-required="true">
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="tax" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SGST </font></font><i class="text-danger"></i></label>
+<div class="col-sm-7">
+<input type="text" name="tax0" class="form-control" value="9.00">
+</div>
+<div class="col-sm-1"> <i class="text-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">%</font></font></i></div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="tax" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CGST </font></font><i class="text-danger"></i></label>
+<div class="col-sm-7">
+<input type="text" name="tax1" class="form-control" value="9.00">
+</div>
+<div class="col-sm-1"> <i class="text-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">%</font></font></i></div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="tax" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IGST </font></font><i class="text-danger"></i></label>
+<div class="col-sm-7">
+<input type="text" name="tax2" class="form-control" value="18.00">
+</div>
+<div class="col-sm-1"> <i class="text-success"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">%</font></font></i></div>
+</div>
+</div>
+</div>
+
+
+<div class="row" id="manufacturer_info">
+<div class="col-sm-6">
+<div class="form-group row">
+<label for="manufacturer" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fabricant </font></font><i class="text-danger"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></i></label>
+<div class="col-sm-8">
+<select name="manufacturer_id" class="form-control select2-hidden-accessible" required="required" tabindex="-1" id="" aria-hidden="true" aria-required="true">
+<option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sélectionnez le fabricant </font></font></option>
+         <option value="8"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Advlent </font></font></option>
+         <option value="7"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Laboratoires Std Ltd.</font></font></option>
+         <option value="6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GCL Pharmaceuticals Ltd</font></font></option>
+         <option value="5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MPL Pharma</font></font></option>
+         <option value="4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ACL</font></font></option>
+         <option value="3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bexilo</font></font></option>
+         <option value="2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Farto &amp; Deto Pharmaceuticals Ltd</font></font></option>
+         <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">carré </font></font></option>
+     </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 315.656px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="12" aria-labelledby="select2--container"><span class="select2-selection__rendered" id="select2--container"><span class="select2-selection__placeholder"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sélectionnez l'option</font></font></span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+<a data-target="#manufac_modal" data-toggle="modal"><i class="fa fa-plus"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ajouter un nouveau fabricant</font></font></a>
+</div>
+</div>
+</div>
+
+<div class="col-sm-6">
+<div class="form-group row">
+
+<label for="manufacturer_price" class="col-sm-4 col-form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prix ​​fabricant </font></font><i class="text-danger"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></i></label>
+<div class="col-sm-8">
+<input type="text" tabindex="13" onkeyup="if (!window.__cfRLUnblockHandlers) return false; ProfitPrice(),checkmprice()" class="form-control text-right" name="manufacturer_price" placeholder="0,00" required="required" min="0" id="mprice" aria-required="true">
+<span id="prft"></span>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="form-group row">
+<div class="col-sm-6">
+
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input type="submit" id="add-product" class="btn btn-primary btn-large" name="add-product" value="Enregistrer " tabindex="14"></font></font>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input type="submit" value="Enregistrer et ajouter un autre" name="add-product-another" class="btn btn-large btn-success" id="add-product-another" tabindex="15"></font></font>
+</div>
+</div>
+</div>
+</form></div></div>

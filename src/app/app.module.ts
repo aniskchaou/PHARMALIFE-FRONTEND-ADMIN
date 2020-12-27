@@ -3,58 +3,50 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './template/navigation/navigation.component';
-import { InvoiceComponent } from './content/invoice/invoice.component';
-import { AchatComponent } from './content/achat/achat.component';
-import { CategoryComponent } from './content/category/category.component';
-import { ClientComponent } from './content/client/client.component';
-import { CustructorComponent } from './content/custructor/custructor.component';
-import { MedicamentComponent } from './content/medicament/medicament.component';
-import { ServiceComponent } from './content/service/service.component';
-import { StockComponent } from './content/stock/stock.component';
-import { TypeComponent } from './content/type/type.component';
-import { SupplierComponent } from './content/supplier/supplier.component';
-import { RouterModule, Routes } from '@angular/router';
-import { APP_BASE_HREF } from '@angular/common';
-import { DashboardComponent } from './content/dashboard/dashboard.component';
-import { LoginComponent } from './content/login/login.component';
-import { ConfigurationComponent } from './content/configuration/configuration.component';
 
-const routes:Routes=[
-  {path:'dashboard',component:DashboardComponent},
-  {path:'invoice',component:InvoiceComponent},
-  {path:'service',component:ServiceComponent},
-  {path:'client',component:ClientComponent},
-  {path:'category',component:CategoryComponent},
-  {path:'buy',component:AchatComponent},
-  {path:'constructor',component:CustructorComponent},
-  {path:'medicament',component:MedicamentComponent},
-  {path:'stock',component:StockComponent},
-  {path:'supplier',component:SupplierComponent},
-  {path:'type',component:TypeComponent},
-  {path:'login',component:LoginComponent},
-  {path:'configuration',component:ConfigurationComponent},
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'**',redirectTo:'login',pathMatch:'full'}]
+
+
+import { routes } from './routes';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
+import { BuyModule } from './content/modules/buy/buy.module';
+import { CategoryModule } from './content/modules/category/category.module';
+import { ClientModule } from './content/modules/client/client.module';
+import { ConstructorModule } from './content/modules/constructor/constructor.module';
+import { InvoiceModule } from './content/modules/invoice/invoice.module';
+import { MedicamentModule } from './content/modules/medicament/medicament.module';
+import { ServiceModule } from './content/modules/service/service.module';
+import { StockModule } from './content/modules/stock/stock.module';
+import { SupplierModule } from './content/modules/supplier/supplier.module';
+import { TypeModule } from './content/modules/type/type.module';
+import { SharedModule } from './content/shared/shared.module';
+import { EditCategoryComponent } from './content/modules/category/components/edit-category/edit-category.component';
+import { AddCategoryComponent } from './content/modules/category/components/add-category/add-category.component';
+import { ViewCategoryComponent } from './view-category/view-category.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    InvoiceComponent,
-    AchatComponent,
-    CategoryComponent,
-    ClientComponent,
-    CustructorComponent,
-    MedicamentComponent,
-    ServiceComponent,
-    StockComponent,
-    TypeComponent,
-    SupplierComponent,
-    ConfigurationComponent
+    EditCategoryComponent,
+    AddCategoryComponent,
+    ViewCategoryComponent,
+   
   ],
   imports: [
+    BuyModule,
+    CategoryModule,
+    ClientModule,
+    ConstructorModule,
+    InvoiceModule,
+    MedicamentModule,
+    ServiceModule,
+    StockModule,
+    SupplierModule,
+    TypeModule,
     BrowserModule,
+    SharedModule,
     RouterModule.forRoot(routes)
   ],
   providers: [{provide: APP_BASE_HREF, useValue: ''}],
