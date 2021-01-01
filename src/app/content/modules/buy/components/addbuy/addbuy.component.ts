@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-addbuy',
+  selector: 'app-add-buy',
   templateUrl: './addbuy.component.html',
   styleUrls: ['./addbuy.component.css']
 })

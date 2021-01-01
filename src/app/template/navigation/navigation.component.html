@@ -1,5 +1,5 @@
 
-<aside id="left-panel" class="left-panel">
+<aside id="left-panel" class="left-panel"  >
 
    
     <nav class="navbar navbar-expand-sm navbar-default">
@@ -14,106 +14,70 @@
   
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li>
-                    <a routerLink="/dashboard"> <i class="menu-icon fa fa-dashboard"></i>Tableau de bord </a>
+               
+                <li class="menu-item">
+                    <a href="#" routerLinkActive="activeLink" routerLink="/dashboard"> <i class="menu-icon fa fa-th-large"></i>Tableau de bord </a>
                 </li>
                
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Facture d'achat</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a routerLink="/addinvoice">Nouvelle facture</a></li>
-                        <li><i class="fa fa-id-badge"></i><a routerLink="/invoice">Gérer la facture</a></li>
-                      
-                    </ul>
+                <li class="menu-item">
+                    <a href="#"  routerLinkActive="activeLink" routerLink="/invoice"> <i class="menu-icon fa fa-file"></i>Facture d'achat</a>
                 </li>
-                <li class="menu-item-has-children active dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Client</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a routerLink="/addclient">Ajouter un client</a></li>
-                        <li><i class="fa fa-table"></i><a routerLink="/client">Gérer des client</a></li>
-                    </ul>
+
+                <li class="menu-item">
+                    <a href="#" routerLinkActive="activeLink" routerLink="/client" > <i class="menu-icon fa fa-users"></i>Clients</a>
+                   
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Médicament</a>
+                    <a href="#" routerLinkActive="activeLink" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-capsules"></i>Médicament</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a routerLink="/category">Catégorie</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a routerLink="/addcategory">Ajouter Catégorie</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a routerLink="/type">Type médecine</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a routerLink="/addtype">Ajouter Type</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a routerLink="/addmedicament">Ajouter un médicament</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a routerLink="/medicament">Gérer les médicament</a></li>
+                        <li><i class="menu-icon fa fa-columns"></i><a routerLink="/category">Catégories</a></li>
+                        <li><i class="menu-icon fa fa-crutch"></i><a routerLink="/type">Type médecine</a></li>
+                        <li><i class="menu-icon fa fa-capsules"></i><a routerLink="/medicament">Médicaments</a></li>
                     </ul>
                 </li>
   
                
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Fabricant</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-fort-awesome"></i><a routerLink="/addconstructor">Ajouter un fabricant</a></li>
-                        <li><i class="menu-icon ti-themify-logo"></i><a routerLink="/constructor">Gérer le fabricant</a></li>
-                    </ul>
+                <li class="menu-item">
+                    <a href="#" routerLinkActive="activeLink" routerLink="/constructor" > <i class="menu-icon fa fa-clinic-medical"></i>Fabricants</a>
                 </li>
                
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Achat</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-line-chart"></i><a routerLink="/addbuy">Ajouter un achat</a></li>
-                        <li><i class="menu-icon fa fa-area-chart"></i><a routerLink="/buy">Gérer l'achat</a></li>
-                       
-                    </ul>
+                <li class="menu-item">
+                    <a href="#" routerLinkActive="activeLink" routerLink="/buy"> <i class="menu-icon fa fa-mortar-pestle"></i>Achat</a>
                 </li>
   
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Stock</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-map-o"></i><a routerLink="/buy">Rapport de stock</a></li>
-                       
-                    </ul>
+                <li class="menu-item">
+                    <a href="#" routerLinkActive="activeLink" routerLink="/stock" > <i class="menu-icon fa fa-hospital"></i>Stock</a>
                 </li>
               
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Revenir</a>
+                    <a href="#" routerLinkActive="activeLink" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-mortar-pestle"></i>Revenir</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a >Stock</a></li>
-                        <li><i class="menu-icon fa fa-sign-in"></i><a >Fabricant</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a >Gaspillage</a></li>
+                        <li><i class="menu-icon fa fa-mortar-pestle"></i><a >Stock</a></li>
+                        <li><i class="menu-icon fa fa-mortar-pestle"></i><a >Fabricant</a></li>
+                        <li><i class="menu-icon fa fa-mortar-pestle"></i><a >Gaspillage</a></li>
                     </ul>
                 </li>
   
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Rapport</a>
+                    <a href="#" routerLinkActive="activeLink" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-notes-medical"></i>Rapport</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a >Achat</a></li>
-                        <li><i class="menu-icon fa fa-sign-in"></i><a >Ventes</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a >Profit</a></li>
+                        <li><i class="menu-icon fa fa-notes-medical"></i><a >Achat</a></li>
+                        <li><i class="menu-icon fa fa-notes-medical"></i><a >Ventes</a></li>
+                        <li><i class="menu-icon fa fa-notes-medical"></i><a >Profit</a></li>
                     </ul>
                 </li>
   
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Fournisseur</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a routerLink="/addsupplier">Ajouter un fournisseur</a></li>
-                        <li><i class="menu-icon fa fa-sign-in"></i><a routerLink="/supplier">Gérer fournisseur</a></li>
-                        
-                    </ul>
+                <li class="menu-item">
+                    <a href="#" routerLinkActive="activeLink" routerLink="/supplier"> <i class="menu-icon fa fa-hospital-user"></i>Fournisseurs</a>
+                   
                 </li>
   
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Service</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a routerLink="/addservice">Ajouter un Service</a></li>
-                        <li><i class="menu-icon fa fa-sign-in"></i><a routerLink="/service">Gérer Service</a></li>
-                        
-                    </ul>
+                <li class="menu-item">
+                    <a href="#" routerLinkActive="activeLink" routerLink="/service"> <i class="menu-icon fa fa-stethoscope"></i>Services</a>
                 </li>
   
-                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Réglages</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a routerLink="/configuration">Générale</a></li>
-                        
-                        
-                    </ul>
+                 <li class="menu-item">
+                    <a href="#" routerLinkActive="activeLink" routerLink="/configuration" > <i class="menu-icon fa fa-cog"></i>Réglages</a>
                 </li>
   
   

@@ -20,8 +20,6 @@ import { StockModule } from './content/modules/stock/stock.module';
 import { SupplierModule } from './content/modules/supplier/supplier.module';
 import { TypeModule } from './content/modules/type/type.module';
 import { SharedModule } from './content/shared/shared.module';
-import { EditCategoryComponent } from './content/modules/category/components/edit-category/edit-category.component';
-import { AddCategoryComponent } from './content/modules/category/components/add-category/add-category.component';
 import { ViewCategoryComponent } from './view-category/view-category.component';
 
 
@@ -29,8 +27,7 @@ import { ViewCategoryComponent } from './view-category/view-category.component';
   declarations: [
     AppComponent,
     NavigationComponent,
-    EditCategoryComponent,
-    AddCategoryComponent,
+   
     ViewCategoryComponent,
    
   ],

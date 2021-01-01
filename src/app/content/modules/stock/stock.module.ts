@@ -5,7 +5,7 @@ import { StockComponent } from './components/stock/stock.component';
 
 
 @NgModule({
-  declarations: [StockComponent,],
+  declarations: [StockComponent],
   imports: [
     CommonModule
   ]

@@ -1,7 +1,7 @@
 <!-- Left Panel -->
 
 
-<app-navigation></app-navigation>
+<app-navigation *ngIf="!hasRoute('login')"></app-navigation>
 <!-- /#left-panel -->
 
 <!-- Right Panel -->
@@ -105,14 +105,12 @@
                     </a>
 
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                     <!--  <a class="nav-link" routerLink="/profile" href="#"><i class="fa fa-user"></i> My Profile</a>-->
 
-                        <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span
-                                class="count">13</span></a>
+                       
+                        <a class="nav-link" routerLink="/configuration" href="#"><i class="fa fa-cog"></i> Parametres</a>
 
-                        <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
-
-                        <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                        <a class="nav-link" routerLink="/login" href="#"><i class="fa fa-power-off"></i> Déconnexion</a>
                     </div>
                 </div>
 
@@ -172,11 +170,11 @@
                 </a>
             </div>
             <div class="login-form">
-                <small>login : admin / mp : admin</small>
+             
                
                     <div class="form-group">
                         <label>login</label>
-                        <input type="admin" class="form-control" placeholder="Email" value="admin">
+                        <input type="admin" class="form-control" placeholder="Email" value="admin@admin.com">
                     </div>
                     <div class="form-group">
                         <label>Password</label>
