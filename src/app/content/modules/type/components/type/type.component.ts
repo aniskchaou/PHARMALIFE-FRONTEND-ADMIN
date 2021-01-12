@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { URLLoader } from './../../../../../configs/URLLoader';
 
 @Component({
   selector: 'app-type',
   templateUrl: './type.component.html',
   styleUrls: ['./type.component.css']
 })
-export class TypeComponent implements OnInit {
+export class TypeComponent extends URLLoader implements OnInit {
 
  
          
-  constructor(private _router: Router){     
-  }      
-
+  constructor(private _router: Router) {
+    super()
+  }
 
   ngOnInit(): void {
+    super.loadScripts()
   }
 
   moveViewType() {
