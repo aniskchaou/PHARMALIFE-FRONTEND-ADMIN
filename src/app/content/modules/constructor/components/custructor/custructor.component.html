@@ -8,7 +8,6 @@
                 <tr>
                     <th>Nom </th>
                     <th>Adresse</th>
-                    <th>Mobile</th>
                     <th>Telephone</th>
                     <th>email</th>
                     <th>Ville</th>
@@ -18,19 +17,30 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Anis</td>
-                    <td>fzefze</td>
-                    <td>zzz</td>
-                    <td>zzz</td>
-                    <td>zzz</td>
-                    <td>zzz</td>
-                    <td>zzz</td>
+                    <td>Sanofi Pasteur</td>
+                    <td>36, place Stanislas
+                      92000 NANTERRE</td>
+                    <td>01.17.19.94.43</td>
+                    <td>GemmaLagueux@dayrep.com</td>
+                    <td>Paris</td>
+                    <td>France</td>
                     <td>
                         <button (click)="moveEditConstructor()" type="button" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
                         <button  type="button" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i class="fas fa-trash-alt"></i></button></td>
                 </tr>
             
             </tbody>
+            <tfoot>
+              <tr>
+                  <th>Nom </th>
+                  <th>Adresse</th>
+                  <th>Telephone</th>
+                  <th>email</th>
+                  <th>Ville</th>
+                  <th>Pays</th>
+                  <th>Actions</th>
+              </tr>
+            </tfoot>
         </table>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addConstructor">Ajouter</button>
 

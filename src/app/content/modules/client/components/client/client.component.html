@@ -15,10 +15,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Anis</td>
-                    <td>Anis fzefze</td>
-                    <td>90800</td>
-                    <td>anis@gmail.com</td>
+                    <td>Eleanor Cinq-Mars</td>
+                    <td>32, Boulevard de Normandie
+                      38600 FONTAINE</td>
+                    <td>04.49.35.98.24</td>
+                    <td>EleanorCinq-Mars@jourrapide.com</td>
                     <td><button (click)="moveViewClient()" type="button" class="btn btn-primary btn-sm"><i
                                 class="fas fa-address-book"></i></button>
                         <button (click)="moveEditClient()"  type="button" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
@@ -29,6 +30,15 @@
                 </tr>
 
             </tbody>
+            <tfoot>
+              <tr>
+                  <th>Nom client</th>
+                  <th>Adresse</th>
+                  <th>Téléphone</th>
+                  <th>Email</th>
+                  <th>Actions</th>
+              </tr>
+            </tfoot>
         </table>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addClient">Ajouter</button>
 

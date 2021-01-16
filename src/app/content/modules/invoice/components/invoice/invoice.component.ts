@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { URLLoader } from './../../../../../configs/URLLoader';
 
 @Component({
   selector: 'app-invoice',
   templateUrl: './invoice.component.html',
   styleUrls: ['./invoice.component.css']
 })
-export class InvoiceComponent implements OnInit {
+export class InvoiceComponent extends URLLoader implements OnInit {
 
-  constructor(private _router: Router){
-
-         
-        
+ 
+  constructor(private _router: Router) {
+    super()
   }
 
   ngOnInit(): void {
+    super.loadScripts()
   }
 
   moveEditInvoice() {

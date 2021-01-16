@@ -8,7 +8,6 @@
                 <thead>
                     <tr>
                         <th>No facture </th>
-                        <th>achats</th>
                         <th>Nom fabricant</th>
                         <th>Date</th>
                         <th>Montant</th>
@@ -17,17 +16,25 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Anis</td>
-                        <td>fzefze</td>
-                        <td>zzz</td>
-                        <td>zzz</td>
-                        <td>zzz</td>
+                        <td>7G78T7</td>
+                        <td>Sanofi</td>
+                        <td>23/1/20202</td>
+                        <td>123$</td>
                         <td>
                             <button  type="button" (click)="moveEditBuy()" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
                             <button  type="button" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i class="fas fa-trash-alt"></i></button></td>
                     </tr>
                 
                 </tbody>
+                <tfoot>
+                  <tr>
+                      <th>No facture </th>
+                      <th>Nom fabricant</th>
+                      <th>Date</th>
+                      <th>Montant</th>
+                      <th>Actions</th>
+                  </tr>
+              </tfoot>
             </table>
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addBuy">Ajouter</button>
 

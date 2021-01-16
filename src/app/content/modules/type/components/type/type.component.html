@@ -13,8 +13,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>azz</td>
-                    <td>Anis fzefze</td>
+                    <td>médicament générique</td>
+                    <td>médicament générique</td>
                     <td>
                         <button (click)="moveEditType()" type="button" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
                         <button type="button" class="btn btn-danger btn-sm"
@@ -22,8 +22,25 @@
                                 class="fas fa-trash-alt"></i></button>
                     </td>
                 </tr>
+                <tr>
+                  <td>médicament biosimilaire</td>
+                  <td>médicament biosimilaire</td>
+                  <td>
+                      <button (click)="moveEditType()" type="button" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+                      <button type="button" class="btn btn-danger btn-sm"
+                          onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
+                              class="fas fa-trash-alt"></i></button>
+                  </td>
+              </tr>
 
             </tbody>
+            <tfoot>
+              <tr>
+                  <th>Nom</th>
+                  <th>Description</th>
+                  <th>Actions</th>
+              </tr>
+          </tfoot>
         </table>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addType">Ajouter</button>
 

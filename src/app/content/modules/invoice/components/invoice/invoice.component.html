@@ -16,9 +16,9 @@
             <tbody>
                 <tr>
                     <td>3D232</td>
-                    <td>Anis</td>
+                    <td>Eugène Boileau  </td>
                     <td>22/11/2020</td>
-                    <td>$320</td>
+                    <td class="badge badge-primary">$320</td>
                     <td>
                         <button (click)="moveEditInvoice()" type="button" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
                         <button type="button" class="btn btn-danger btn-sm"
@@ -28,6 +28,15 @@
                 </tr>
 
             </tbody>
+            <tfoot>
+              <tr>
+                  <th>No facture</th>
+                  <th>Client</th>
+                  <th>Date</th>
+                  <th>Montant</th>
+                  <th>Actions</th>
+              </tr>
+          </tfoot>
         </table>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addInvoice">Ajouter</button>
 

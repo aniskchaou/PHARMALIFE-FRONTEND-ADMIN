@@ -12,25 +12,46 @@
                     <th>Fabricant</th>
                     <th>Etagiere</th>
                     <th>Prix</th>
-                    <th>Force</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Anis</td>
-                    <td>fzefze</td>
-                    <td>zzz</td>
-                    <td>zzz</td>
-                    <td>zzz</td>
-                    <td>zzz</td>
-                    <td>zzz</td>
+                    <td>Doliprane</td>
+                    <td>PARACETAMOL</td>
+                    <td>Analgésiques et Anti-inflammatoires</td>
+                    <td>Sanofi Pasteur</td>
+                    <td>4A</td>
+                    <td>13.04$</td>
                     <td><button  (click)="moveViewMedicament()" type="button" class="btn btn-primary btn-sm"><i class="fas fa-address-book"></i></button>
                         <button  (click)="moveEditMedicament()" type="button" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
                         <button  type="button" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i class="fas fa-trash-alt"></i></button></td>
                 </tr>
+
+                <tr>
+                  <td>Nurofen</td>
+                  <td>IBUPROFENE</td>
+                  <td>Analgésiques et Anti-inflammatoires</td>
+                  <td>Sanofi Pasteur</td>
+                  <td>1C</td>
+                  <td>13.45$</td>
+                  <td><button  (click)="moveViewMedicament()" type="button" class="btn btn-primary btn-sm"><i class="fas fa-address-book"></i></button>
+                      <button  (click)="moveEditMedicament()" type="button" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+                      <button  type="button" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i class="fas fa-trash-alt"></i></button></td>
+              </tr>
             
             </tbody>
+            <tfoot>
+              <tr>
+                  <th>Nom </th>
+                  <th>Nom genetique</th>
+                  <th>Categorie</th>
+                  <th>Fabricant</th>
+                  <th>Etagiere</th>
+                  <th>Prix</th>
+                  <th>Actions</th>
+              </tr>
+          </tfoot>
         </table>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addMedicament">Ajouter</button>
 
