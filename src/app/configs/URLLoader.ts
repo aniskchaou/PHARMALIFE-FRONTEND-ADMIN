@@ -1,8 +1,12 @@
+import showMessage from '../../app/content/main/notification/notification'
 export class URLLoader {
     constructor() {
         
     }
 
+  show(title, message, type) {
+    showMessage(title, message, type);
+  }
     loadScripts() {
         const dynamicScripts = [
          'https://code.jquery.com/jquery-2.2.4.min.js',
@@ -14,7 +18,8 @@ export class URLLoader {
          'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js',
          'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js',
          'https://cdn.datatables.net/v/dt/dt-1.10.23/b-1.6.5/b-colvis-1.6.5/b-html5-1.6.5/datatables.min.js',
-         'https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/b-print-1.6.5/datatables.min.js',
+          'https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.23/b-1.6.5/b-html5-1.6.5/b-print-1.6.5/datatables.min.js',
+          '../assets/js/notification.js',
          '../assets/js/init.js',
         ];
         for (let i = 0; i < dynamicScripts.length; i++) {

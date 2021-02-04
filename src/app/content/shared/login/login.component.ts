@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { URLLoader } from 'src/app/configs/URLLoader';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends URLLoader implements OnInit {
 
-  constructor() { }
+  constructor() { super() }
 
   private myScripts = [
     "../assets/vendors/jquery/dist/jquery.min.js",
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
     "../assets/vendors/datatables.net-buttons/js/buttons.colVis.min.js",
     "../assets/js/init-scripts/data-table/datatables-init.js"
 ];
-private loadScripts() {
+  loadScripts() {
     let container=document.getElementsByTagName('app-root')[0];
     let promise = Promise.resolve();
     for (let url of this.myScripts) {
@@ -47,6 +48,7 @@ private loadScripts() {
   
 
   ngOnInit() {
+    super.show('Pharma Life', 'Cette Application est en cours de développment.', 'info')
    this.loadScripts();
   }
 

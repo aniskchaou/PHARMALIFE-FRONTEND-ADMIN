@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
+import { URLLoader } from 'src/app/configs/URLLoader';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent extends URLLoader implements OnInit {
 
-  constructor() { }
+  constructor() { super() }
 
   private myScripts = [
     "../assets/vendors/jquery/dist/jquery.min.js",
@@ -29,7 +30,7 @@ export class DashboardComponent implements OnInit {
     "../assets/vendors/datatables.net-buttons/js/buttons.colVis.min.js",
     "../assets/js/init-scripts/data-table/datatables-init.js"
 ];
-private loadScripts() {
+  loadScripts() {
     let container=document.getElementsByTagName('app-root')[0];
     let promise = Promise.resolve();
     for (let url of this.myScripts) {
@@ -48,14 +49,15 @@ private loadScripts() {
   
 
 ngOnInit(): void {
-   
+  
   let data = [20000, 14000, 12000, 15000, 18000, 19000, 22000];
   let data2 = [43000, 53000, 34000, 38000, 66000, 77000, 53000];
   let labels =  ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
   var ctx1 = document.getElementsByClassName("revenue-chart");
   var ctx2 = document.getElementsByClassName("expense-chart");
   this.renderChart(data, labels,ctx1,'rgba(204, 0, 0, 1)');
-  this.renderChart(data2, labels,ctx2,'rgba(24, 0, 204, 1)');
+  this.renderChart(data2, labels, ctx2, 'rgba(24, 0, 204, 1)');
+  super.show('Pharma Life', 'Cette Application est en cours de développment.', 'info')
 }
 
 

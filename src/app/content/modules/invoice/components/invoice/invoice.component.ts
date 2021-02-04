@@ -16,6 +16,7 @@ export class InvoiceComponent extends URLLoader implements OnInit {
 
   ngOnInit(): void {
     super.loadScripts()
+    super.show('Pharma Life', 'Cette Application est en cours de développment.', 'info')
   }
 
   moveEditInvoice() {
