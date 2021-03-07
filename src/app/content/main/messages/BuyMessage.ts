@@ -5,10 +5,19 @@ import { Injectable } from "@angular/core"
 })
 export default class BuyMessage {
 
-    confirmationMessages = { 'title': 'confirmation', 'add': 'achat a ete ajoute avec succes', 'edit': '', 'delete': '' }
+    confirmationMessages = {
+        'title': 'confirmation',
+        'add': 'Achat a été ajouté avec succés',
+        'edit': 'Achat a été modifié avec succés',
+        'delete': 'Achat a été supprimé avec succés'
+    }
     validationMessage = {
-        'purchase_invoiceNo': 'facture No doit etre definie.',
-        'date_buy': 'date achat doit etre definie.'
+        'manufacturer_id': 'Constructeur est obligatoire',
+        'purchase_date': 'Date dachat est obligatoire',
+        'chalan_no': ' est obligatoire',
+        'purchase_details': 'Details achat est obligatoire',
+        'paytype': 'Type de paiement est obligatoire',
+        'bank_id': 'Banque est obligatoire',
     }
 
     constructor() {

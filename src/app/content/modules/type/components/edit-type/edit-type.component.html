@@ -1,26 +1,25 @@
-
-    <div class="form-group row">
-        <label for="type_name" class="col-sm-3 col-form-label">
+<div class="form-group row">
+    <label for="type_name" class="col-sm-3 col-form-label">
+        <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Nom du type </font>
+        </font><i class="text-danger">
             <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Nom du type </font>
-            </font><i class="text-danger">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">*</font>
-                </font>
-            </i>
-        </label>
-        <div class="col-sm-4">
-            <input class="form-control" name="type_name" id="type_name" type="text" placeholder="Nom du type"
-                required="" aria-required="true">
-        </div>
-        <div class="col-sm-2">
+                <font style="vertical-align: inherit;">*</font>
+            </font>
+        </i>
+    </label>
+    <div class="col-sm-4">
+        <input [(ngModel)]="model.type_name" class="form-control" name="type_name" id="type_name" type="text"
+            placeholder="Nom du type" required="" aria-required="true">
+    </div>
+    <div class="col-sm-2">
+        <font style="vertical-align: inherit;">
             <font style="vertical-align: inherit;">
                 <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;"><input type="submit" id="add-customer"
-                                class="btn btn-success btn-large" name="add-customer" value="enregistrer"></font>
-                    </font>
+                    <font style="vertical-align: inherit;"><input (click)="edit()" type="submit" id="add-customer"
+                            class="btn btn-success btn-large" name="add-customer" value="enregistrer"></font>
                 </font>
             </font>
-        </div>
+        </font>
     </div>
+</div>

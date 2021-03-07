@@ -1,7 +1,9 @@
-<form action="https://pharmacyv5.bdtask.com/pharmacare-9.3_demo/Cservice/insert_service" class="form-vertical"
-    id="insert_service" method="post" accept-charset="utf-8">
-    <input type="hidden" name="csrf_test_name" value="6ea5babaa8a9985f88b3a90fab3fbf4d">
+<form class="form-vertical" id="insert_service" [formGroup]="serviceForm" method="post" accept-charset="utf-8">
+
     <div class="panel-body">
+
+
+
 
         <div class="form-group row">
             <label for="service_name" class="col-sm-3 col-form-label">
@@ -14,10 +16,19 @@
                 </i>
             </label>
             <div class="col-sm-6">
-                <input class="form-control" name="service_name" id="service_name" type="text"
-                    placeholder="Nom du service" required="">
+                <input [ngClass]="{ 'is-invalid': submitted && f.service_name.errors }" formControlName="service_name"
+                    class="form-control" name="service_name" id="service_name" type="text" placeholder="Nom du service"
+                    required="">
+
+                <div *ngIf="submitted && f.service_name.errors" class="alert alert-danger">
+                    <div *ngIf="submitted && f.service_name.errors.required">
+                        {{msg.validationMessage.service_name}}</div>
+                </div>
             </div>
         </div>
+
+
+
 
         <div class="form-group row">
             <label for="charge" class="col-sm-3 col-form-label">
@@ -30,9 +41,19 @@
                 </i>
             </label>
             <div class="col-sm-6">
-                <input class="form-control" name="charge" id="charge" type="text" placeholder="Charge" required="">
+                <input [ngClass]="{ 'is-invalid': submitted && f.charge.errors }" formControlName="charge"
+                    class="form-control" name="charge" id="charge" type="text" placeholder="Charge" required="">
+
+                <div *ngIf="submitted && f.charge.errors" class="alert alert-danger">
+                    <div *ngIf="submitted && f.charge.errors.required">
+                        {{msg.validationMessage.charge}}</div>
+                </div>
+
             </div>
         </div>
+
+
+
 
         <div class="form-group row">
             <label for="description" class="col-sm-3 col-form-label">
@@ -41,73 +62,57 @@
                 </font><i class="text-danger"></i>
             </label>
             <div class="col-sm-6">
-                <textarea class="form-control" name="description" id="description"
-                    placeholder="La description"></textarea>
+                <textarea [ngClass]="{ 'is-invalid': submitted && f.description.errors }" formControlName="description"
+                    class="form-control" name="description" id="description" placeholder="La description"></textarea>
+
+                <div *ngIf="submitted && f.description.errors" class="alert alert-danger">
+                    <div *ngIf="submitted && f.description.errors.required">
+                        {{msg.validationMessage.description}}</div>
+                </div>
+
             </div>
         </div>
+
+
+
 
 
         <div class="form-group row">
             <label for="tax" class="col-sm-3 col-form-label">
                 <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">SGST </font>
+                    <font style="vertical-align: inherit;">TVA </font>
                 </font><i class="text-danger"></i>
             </label>
             <div class="col-sm-6">
-                <input type="number" name="tax0" class="form-control" value="9.00">
-            </div>
-            <div class="col-sm-1"> <i class="text-success">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">%</font>
-                    </font>
-                </i></div>
-        </div>
+                <input [ngClass]="{ 'is-invalid': submitted && f.tax.errors }" formControlName="tax" type="number"
+                    name="tax" class="form-control" value="9.00">
 
-        <div class="form-group row">
-            <label for="tax" class="col-sm-3 col-form-label">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">CGST </font>
-                </font><i class="text-danger"></i>
-            </label>
-            <div class="col-sm-6">
-                <input type="number" name="tax1" class="form-control" value="9.00">
-            </div>
-            <div class="col-sm-1"> <i class="text-success">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">%</font>
-                    </font>
-                </i></div>
-        </div>
+                <div *ngIf="submitted && f.tax.errors" class="alert alert-danger">
+                    <div *ngIf="submitted && f.tax.errors.required">
+                        {{msg.validationMessage.tax}}</div>
+                </div>
 
-        <div class="form-group row">
-            <label for="tax" class="col-sm-3 col-form-label">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">IGST </font>
-                </font><i class="text-danger"></i>
-            </label>
-            <div class="col-sm-6">
-                <input type="number" name="tax2" class="form-control" value="18.00">
+
             </div>
-            <div class="col-sm-1"> <i class="text-success">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">%</font>
-                    </font>
-                </i></div>
+
         </div>
 
 
-        <div class="form-group row">
-            <label for="example-text-input" class="col-sm-4 col-form-label"></label>
-            <div class="col-sm-6">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;"><input type="submit" id="add-service"
-                                    class="btn btn-success btn-large" name="add-service" value="enregistrer"></font>
-                        </font>
-                    </font>
-                </font>
-            </div>
+
+
+        <div class="col-sm-3">
+            <button (click)="add()" type="button" class="btn btn-info">
+                <i class="fas fa-save"></i>
+                Sauvegarder
+            </button>
+            <button (click)="reset()" type="button" class="btn btn-danger">
+                <i class="fas fa-times"></i>
+                Annuler
+            </button>
         </div>
+
+
+
+
     </div>
 </form>

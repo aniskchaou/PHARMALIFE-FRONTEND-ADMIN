@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 import Service from "../interfaces/Service";
 
 @Injectable({
@@ -6,31 +7,32 @@ import Service from "../interfaces/Service";
 })
 export default class CategoryTestService implements Service {
 
-    _buy = []
+    public ID = new BehaviorSubject<string>(null);
+    _categorie = []
     static id = 0
 
     public getAll() {
-        return this._buy;
+        return this._categorie;
     }
 
     public get(id) {
-        return this._buy.find(item => item.id === id);
+        return this._categorie.find(item => item.id === id);
     };
 
     public create(data) {
         data["id"] = CategoryTestService.id
-        this._buy.push(data);
+        this._categorie.push(data);
         CategoryTestService.id++
     };
 
-    public update(old, data) {
+    public update(data) {
 
-        var foundIndex = this._buy.findIndex(item => item === old);
-        this._buy[foundIndex] = data;
+        var foundIndex = this._categorie.findIndex(item => item.id === parseInt(data.id));
+        this._categorie[foundIndex] = data;
     };
 
     public remove(id) {
-        this._buy.splice(id, 1);
+        this._categorie.splice(id, 1);
     };
 
 

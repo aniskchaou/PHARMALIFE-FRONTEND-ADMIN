@@ -4,12 +4,15 @@ import { ViewServiceComponent } from './components/view-service/view-service.com
 import { AddServiceComponent } from './components/add-service/add-service.component';
 import { EditServiceComponent } from './components/edit-service/edit-service.component';
 import { ServiceComponent } from './components/service/service.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [ViewServiceComponent,AddServiceComponent,EditServiceComponent,ServiceComponent],
+  declarations: [ViewServiceComponent, AddServiceComponent, EditServiceComponent, ServiceComponent],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule
   ]
 })

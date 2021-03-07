@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { URLLoader } from './../../../../../configs/URLLoader';
+import { URLLoader } from 'src/app/content/main/configs/URLLoader';
+
 
 @Component({
   selector: 'app-stock',

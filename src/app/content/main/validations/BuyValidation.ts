@@ -25,11 +25,13 @@ export default class BuyValidation {
     createFormGroup() {
         return new FormGroup({
 
-            supplier: new FormControl('', Validators.required),
-            product_id: new FormControl(),
-            purchase_date: new FormControl('', Validators.required),
-            purchase_invoiceNo: new FormControl('', Validators.required),
-            purchase_status: new FormControl('', Validators.required),
+            manufacturer_id: new FormControl('', Validators.required),
+            purchase_date: new FormControl(),
+            chalan_no: new FormControl('', Validators.required),
+            purchase_details: new FormControl('', Validators.required),
+            paytype: new FormControl('', Validators.required),
+            bank_id: new FormControl('', Validators.required),
+
         })
     }
 }

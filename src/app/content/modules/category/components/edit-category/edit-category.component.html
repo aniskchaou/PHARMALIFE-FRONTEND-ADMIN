@@ -1,6 +1,8 @@
 <form class="form-vertical" id="insert_category" method="post" accept-charset="utf-8" novalidate="novalidate">
-    <input type="hidden" name="csrf_test_name" value="0c2f04a45128b8de46fc9b58809c98d1">
+
     <div class="form-group row">
+
+
         <label for="category_name" class="col-sm-3 col-form-label">
             <font style="vertical-align: inherit;">
                 <font style="vertical-align: inherit;">Nom de la catégorie </font>
@@ -11,18 +13,23 @@
             </i>
         </label>
         <div class="col-sm-6">
-            <input class="form-control" name="category_name" id="category_name" type="text"
-                placeholder="Nom de catégorie" required="" aria-required="true">
+            <input [(ngModel)]="model.category_name" class="form-control" name="category_name" id="category_name"
+                type="text" placeholder="Nom de catégorie" required="" aria-required="true">
+
+
+
         </div>
+
+
         <div class="col-sm-3">
-            <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;"><input type="submit" id="add-category"
-                                class="btn btn-success btn-large" name="add-category" value="enregistrer"></font>
-                    </font>
-                </font>
-            </font>
+            <button (click)="edit()" type="button" class="btn btn-info">
+                <i class="fas fa-save"></i>
+                Sauvegarder
+            </button>
+            <button type="button" class="btn btn-danger">
+                <i class="fas fa-times"></i>
+                Annuler
+            </button>
         </div>
     </div>
 </form>

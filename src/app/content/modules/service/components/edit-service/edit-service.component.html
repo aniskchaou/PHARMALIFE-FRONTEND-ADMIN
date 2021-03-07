@@ -1,6 +1,5 @@
-<form action="https://pharmacyv5.bdtask.com/pharmacare-9.3_demo/Cservice/insert_service" class="form-vertical"
-    id="insert_service" method="post" accept-charset="utf-8">
-    <input type="hidden" name="csrf_test_name" value="6ea5babaa8a9985f88b3a90fab3fbf4d">
+<form class="form-vertical" id="insert_service" method="post" accept-charset="utf-8">
+
     <div class="panel-body">
 
         <div class="form-group row">
@@ -14,8 +13,8 @@
                 </i>
             </label>
             <div class="col-sm-6">
-                <input class="form-control" name="service_name" id="service_name" type="text"
-                    placeholder="Nom du service" required="">
+                <input [(ngModel)]="model.service_name" class="form-control" name="service_name" id="service_name"
+                    type="text" placeholder="Nom du service" required="">
             </div>
         </div>
 
@@ -30,7 +29,8 @@
                 </i>
             </label>
             <div class="col-sm-6">
-                <input class="form-control" name="charge" id="charge" type="text" placeholder="Charge" required="">
+                <input [(ngModel)]="model.charge" class="form-control" name="charge" id="charge" type="text"
+                    placeholder="Charge" required="">
             </div>
         </div>
 
@@ -41,59 +41,13 @@
                 </font><i class="text-danger"></i>
             </label>
             <div class="col-sm-6">
-                <textarea class="form-control" name="description" id="description"
+                <textarea [(ngModel)]="model.description" class="form-control" name="description" id="description"
                     placeholder="La description"></textarea>
             </div>
         </div>
 
 
-        <div class="form-group row">
-            <label for="tax" class="col-sm-3 col-form-label">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">SGST </font>
-                </font><i class="text-danger"></i>
-            </label>
-            <div class="col-sm-6">
-                <input type="number" name="tax0" class="form-control" value="9.00">
-            </div>
-            <div class="col-sm-1"> <i class="text-success">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">%</font>
-                    </font>
-                </i></div>
-        </div>
 
-        <div class="form-group row">
-            <label for="tax" class="col-sm-3 col-form-label">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">CGST </font>
-                </font><i class="text-danger"></i>
-            </label>
-            <div class="col-sm-6">
-                <input type="number" name="tax1" class="form-control" value="9.00">
-            </div>
-            <div class="col-sm-1"> <i class="text-success">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">%</font>
-                    </font>
-                </i></div>
-        </div>
-
-        <div class="form-group row">
-            <label for="tax" class="col-sm-3 col-form-label">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">IGST </font>
-                </font><i class="text-danger"></i>
-            </label>
-            <div class="col-sm-6">
-                <input type="number" name="tax2" class="form-control" value="18.00">
-            </div>
-            <div class="col-sm-1"> <i class="text-success">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">%</font>
-                    </font>
-                </i></div>
-        </div>
 
 
         <div class="form-group row">
@@ -102,8 +56,9 @@
                 <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;"><input type="submit" id="add-service"
-                                    class="btn btn-success btn-large" name="add-service" value="enregistrer"></font>
+                            <font style="vertical-align: inherit;"><input (click)="edit()" type="submit"
+                                    id="add-service" class="btn btn-success btn-large" name="add-service"
+                                    value="enregistrer"></font>
                         </font>
                     </font>
                 </font>

@@ -1,5 +1,7 @@
-<form id="insert_manufacturer" enctype="multipart/form-data" method="post" accept-charset="utf-8">
-    <input type="hidden" name="csrf_test_name" value="6ea5babaa8a9985f88b3a90fab3fbf4d">
+<form id="insert_manufacturer" enctype="multipart/form-data" method="post" accept-charset="utf-8"
+    [formGroup]="constructorForm">
+
+
     <div class="panel-body">
         <div class="col-sm-6">
 
@@ -14,10 +16,19 @@
                     </i>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="manufacturer_name" id="manufacturer_name" type="text"
-                        placeholder="Nom du Fabricant" required="" tabindex="1">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.manufacturer_name.errors }"
+                        formControlName="manufacturer_name" class="form-control" name="manufacturer_name"
+                        id="manufacturer_name" type="text" placeholder="Nom du Fabricant" required="" tabindex="1">
+
+                    <div *ngIf="submitted && f.manufacturer_name.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.manufacturer_name.errors.required">
+                            {{msg.validationMessage.manufacturer_name}}</div>
+                    </div>
+
                 </div>
             </div>
+
+
 
             <div class="form-group row">
                 <label for="mobile" class="col-sm-4 col-form-label">
@@ -26,10 +37,20 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="mobile" id="mobile" type="number" placeholder="Fabricant Mobile"
+                    <input [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" formControlName="mobile"
+                        class="form-control" name="mobile" id="mobile" type="number" placeholder="Fabricant Mobile"
                         min="0" tabindex="2">
+
+                    <div *ngIf="submitted && f.mobile.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.mobile.errors.required">
+                            {{msg.validationMessage.mobile}}</div>
+                    </div>
+
                 </div>
             </div>
+
+
+
             <div class="form-group row">
                 <label for="phone" class="col-sm-4 col-form-label">
                     <font style="vertical-align: inherit;">
@@ -37,10 +58,20 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="phone" id="phone" type="number" placeholder="Téléphone" min="0"
+                    <input [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" formControlName="phone"
+                        class="form-control" name="phone" id="phone" type="number" placeholder="Téléphone" min="0"
                         tabindex="2">
+
+                    <div *ngIf="submitted && f.phone.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.phone.errors.required">
+                            {{msg.validationMessage.phone}}</div>
+                    </div>
+
                 </div>
             </div>
+
+
+
             <div class="form-group row">
                 <label for="email" class="col-sm-4 col-form-label">
                     <font style="vertical-align: inherit;">
@@ -48,31 +79,22 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="email" id="email" type="email" placeholder="Email" tabindex="2">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="emailaddress" class="col-sm-4 col-form-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Adresse e-mail </font>
-                    </font><i class="text-danger"></i>
-                </label>
-                <div class="col-sm-8">
-                    <input class="form-control" name="emailaddress" id="emailaddress" type="email"
-                        placeholder="Adresse e-mail">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.email.errors }" formControlName="email"
+                        class="form-control" name="email" id="email" type="email" placeholder="Email" tabindex="2">
+
+                    <div *ngIf="submitted && f.email.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.email.errors.required">
+                            {{msg.validationMessage.email}}</div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="form-group row">
-                <label for="contact" class="col-sm-4 col-form-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Contact </font>
-                    </font><i class="text-danger"></i>
-                </label>
-                <div class="col-sm-8">
-                    <input class="form-control" name="contact" id="contact" type="text" placeholder="Contact">
-                </div>
-            </div>
+
+
+
+
+
 
             <div class="form-group row">
                 <label for="fax" class="col-sm-4 col-form-label">
@@ -81,9 +103,19 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="fax" id="fax" type="text" placeholder="Fax">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.fax.errors }" formControlName="fax"
+                        class="form-control" name="fax" id="fax" type="text" placeholder="Fax">
+
+                    <div *ngIf="submitted && f.fax.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.fax.errors.required">
+                            {{msg.validationMessage.fax}}</div>
+                    </div>
+
+
                 </div>
             </div>
+
+
             <div class="form-group row">
                 <label for="city" class="col-sm-4 col-form-label">
                     <font style="vertical-align: inherit;">
@@ -91,12 +123,21 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="city" id="city" type="text" placeholder="Ville">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.city.errors }" formControlName="city"
+                        class="form-control" name="city" id="city" type="text" placeholder="Ville">
+
+                    <div *ngIf="submitted && f.city.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.city.errors.required">
+                            {{msg.validationMessage.city}}</div>
+                    </div>
+
                 </div>
             </div>
 
         </div>
         <div class="col-sm-6">
+
+
             <div class="form-group row">
                 <label for="state" class="col-sm-4 col-form-label">
                     <font style="vertical-align: inherit;">
@@ -104,7 +145,15 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="state" id="state" type="text" placeholder="Etat">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.state.errors }" formControlName="state"
+                        class="form-control" name="state" id="state" type="text" placeholder="Etat">
+
+                    <div *ngIf="submitted && f.state.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.state.errors.required">
+                            {{msg.validationMessage.state}}</div>
+                    </div>
+
+
                 </div>
             </div>
 
@@ -116,9 +165,19 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="zip" id="zip" type="text" placeholder="Code postal">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.zip.errors }" formControlName="zip"
+                        class="form-control" name="zip" id="zip" type="text" placeholder="Code postal">
+
+                    <div *ngIf="submitted && f.zip.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.zip.errors.required">
+                            {{msg.validationMessage.zip}}</div>
+                    </div>
+
                 </div>
             </div>
+
+
+
             <div class="form-group row">
                 <label for="country" class="col-sm-4 col-form-label">
                     <font style="vertical-align: inherit;">
@@ -129,558 +188,18 @@
 
                     <select name="country" class="form-control select2-hidden-accessible" tabindex="-1"
                         aria-hidden="true">
-                        <option value=" ">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Choisissez le pays</font>
-                            </font>
-                        </option>
+
                         <option value="Afghanistan">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Afghanistan</font>
                             </font>
                         </option>
-                        <option value="Albania">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Albanie</font>
-                            </font>
-                        </option>
-                        <option value="Algeria">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Algérie</font>
-                            </font>
-                        </option>
-                        <option value="Andorra">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Andorre</font>
-                            </font>
-                        </option>
-                        <option value="Angola">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Angola</font>
-                            </font>
-                        </option>
-                        <option value="Antigua and Barbuda">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Antigua-et-Barbuda</font>
-                            </font>
-                        </option>
-                        <option value="Argentina">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Argentine</font>
-                            </font>
-                        </option>
-                        <option value="Armenia">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Arménie</font>
-                            </font>
-                        </option>
-                        <option value="Australia">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Australie</font>
-                            </font>
-                        </option>
-                        <option value="Austria">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">L'Autriche</font>
-                            </font>
-                        </option>
-                        <option value="Azerbaijan">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Azerbaïdjan</font>
-                            </font>
-                        </option>
-                        <option value="Bahamas">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Bahamas</font>
-                            </font>
-                        </option>
-                        <option value="Bahrain">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Bahreïn</font>
-                            </font>
-                        </option>
-                        <option value="Bangladesh">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Bangladesh</font>
-                            </font>
-                        </option>
-                        <option value="Barbados">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Barbade</font>
-                            </font>
-                        </option>
-                        <option value="Belarus">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Biélorussie</font>
-                            </font>
-                        </option>
-                        <option value="Belgium">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Belgique</font>
-                            </font>
-                        </option>
-                        <option value="Belize">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Belize</font>
-                            </font>
-                        </option>
-                        <option value="Benin">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Bénin</font>
-                            </font>
-                        </option>
-                        <option value="Bhutan">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Bhoutan</font>
-                            </font>
-                        </option>
-                        <option value="Bolivia">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Bolivie</font>
-                            </font>
-                        </option>
-                        <option value="Bosnia and Herzegovina">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Bosnie Herzégovine</font>
-                            </font>
-                        </option>
-                        <option value="Botswana">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Botswana</font>
-                            </font>
-                        </option>
-                        <option value="Brazil">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Brésil</font>
-                            </font>
-                        </option>
-                        <option value="Brunei">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Brunei</font>
-                            </font>
-                        </option>
-                        <option value="Bulgaria">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Bulgarie</font>
-                            </font>
-                        </option>
-                        <option value="Burkina Faso">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Burkina Faso</font>
-                            </font>
-                        </option>
-                        <option value="Burundi">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Burundi</font>
-                            </font>
-                        </option>
-                        <option value="Cambodia">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Cambodge</font>
-                            </font>
-                        </option>
-                        <option value="Cameroon">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Cameroun</font>
-                            </font>
-                        </option>
-                        <option value="Canada">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Canada</font>
-                            </font>
-                        </option>
-                        <option value="Cape Verde">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Cap-Vert</font>
-                            </font>
-                        </option>
-                        <option value="Central African Republic">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">République centrafricaine</font>
-                            </font>
-                        </option>
-                        <option value="Chad">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Tchad</font>
-                            </font>
-                        </option>
-                        <option value="Chile">Chile</option>
-                        <option value="China">China</option>
-                        <option value="Colombi">Colombi</option>
-                        <option value="Comoros">Comoros</option>
-                        <option value="Congo (Brazzaville)">Congo (Brazzaville)</option>
-                        <option value="Congo">Congo</option>
-                        <option value="Costa Rica">Costa Rica</option>
-                        <option value="Cote d'Ivoire">Cote d'Ivoire</option>
-                        <option value="Croatia">Croatia</option>
-                        <option value="Cuba">Cuba</option>
-                        <option value="Cyprus">Cyprus</option>
-                        <option value="Czech Republic">Czech Republic</option>
-                        <option value="Denmark">Denmark</option>
-                        <option value="Djibouti">Djibouti</option>
-                        <option value="Dominica">Dominica</option>
-                        <option value="Dominican Republic">Dominican Republic</option>
-                        <option value="East Timor (Timor Timur)">East Timor (Timor Timur)</option>
-                        <option value="Ecuador">Ecuador</option>
-                        <option value="Egypt">Egypt</option>
-                        <option value="El Salvador">El Salvador</option>
-                        <option value="Equatorial Guinea">Equatorial Guinea</option>
-                        <option value="Eritrea">Eritrea</option>
-                        <option value="Estonia">Estonia</option>
-                        <option value="Ethiopia">Ethiopia</option>
-                        <option value="Fiji">Fiji</option>
-                        <option value="Finland">Finland</option>
-                        <option value="France">France</option>
-                        <option value="Gabon">Gabon</option>
-                        <option value="Gambia, The">Gambia, The</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Germany">Germany</option>
-                        <option value="Ghana">Ghana</option>
-                        <option value="Greece">Greece</option>
-                        <option value="Grenada">Grenada</option>
-                        <option value="Guatemala">Guatemala</option>
-                        <option value="Guinea">Guinea</option>
-                        <option value="Guinea-Bissau">Guinea-Bissau</option>
-                        <option value="Guyana">Guyana</option>
-                        <option value="Haiti">Haiti</option>
-                        <option value="Honduras">Honduras</option>
-                        <option value="Hungary">Hungary</option>
-                        <option value="Iceland">Iceland</option>
-                        <option value="India">India</option>
-                        <option value="Indonesia">Indonesia</option>
-                        <option value="Iran">Iran</option>
-                        <option value="Iraq">Iraq</option>
-                        <option value="Ireland">Ireland</option>
-                        <option value="Israel">Israel</option>
-                        <option value="Italy">Italy</option>
-                        <option value="Jamaica">Jamaica</option>
-                        <option value="Japan">Japan</option>
-                        <option value="Jordan">Jordan</option>
-                        <option value="Kazakhstan">Kazakhstan</option>
-                        <option value="Kenya">Kenya</option>
-                        <option value="Kiribati">Kiribati</option>
-                        <option value="Korea, North">Korea, North</option>
-                        <option value="Korea, South">Korea, South</option>
-                        <option value="Kuwait">Kuwait</option>
-                        <option value="Kyrgyzstan">Kyrgyzstan</option>
-                        <option value="Laos">Laos</option>
-                        <option value="Latvia">Latvia</option>
-                        <option value="Lebanon">Lebanon</option>
-                        <option value="Lesotho">Lesotho</option>
-                        <option value="Liberia">Liberia</option>
-                        <option value="Libya">Libya</option>
-                        <option value="Liechtenstein">Liechtenstein</option>
-                        <option value="Lithuania">Lithuania</option>
-                        <option value="Luxembourg">Luxembourg</option>
-                        <option value="Macedonia">Macedonia</option>
-                        <option value="Madagascar">Madagascar</option>
-                        <option value="Malawi">Malawi</option>
-                        <option value="Malaysia">Malaysia</option>
-                        <option value="Maldives">Maldives</option>
-                        <option value="Mali">Mali</option>
-                        <option value="Malta">Malta</option>
-                        <option value="Marshall Islands">Marshall Islands</option>
-                        <option value="Mauritania">Mauritania</option>
-                        <option value="Mauritius">Mauritius</option>
-                        <option value="Mexico">Mexico</option>
-                        <option value="Micronesia">Micronesia</option>
-                        <option value="Moldova">Moldova</option>
-                        <option value="Monaco">Monaco</option>
-                        <option value="Mongolia">Mongolia</option>
-                        <option value="Morocco">Morocco</option>
-                        <option value="Mozambique">Mozambique</option>
-                        <option value="Myanmar">Myanmar</option>
-                        <option value="Namibia">Namibia</option>
-                        <option value="Nauru">Nauru</option>
-                        <option value="Nepal">Nepal</option>
-                        <option value="Netherlands">Netherlands</option>
-                        <option value="New Zealand">New Zealand</option>
-                        <option value="Nicaragua">Nicaragua</option>
-                        <option value="Niger">Niger</option>
-                        <option value="Nigeria">Nigeria</option>
-                        <option value="Norway">Norway</option>
-                        <option value="Oman">Oman</option>
-                        <option value="Pakistan">Pakistan</option>
-                        <option value="Palau">Palau</option>
-                        <option value="Panama">Panama</option>
-                        <option value="Papua New Guinea">Papua New Guinea</option>
-                        <option value="Paraguay">Paraguay</option>
-                        <option value="Peru">Peru</option>
-                        <option value="Philippines">Philippines</option>
-                        <option value="Poland">Poland</option>
-                        <option value="Portugal">Portugal</option>
-                        <option value="Qatar">Qatar</option>
-                        <option value="Romania">Romania</option>
-                        <option value="Russia">Russia</option>
-                        <option value="Rwanda">Rwanda</option>
-                        <option value="Saint Kitts and Nevis">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Saint-Christophe-et-Niévès</font>
-                            </font>
-                        </option>
-                        <option value="Saint Lucia">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sainte-Lucie</font>
-                            </font>
-                        </option>
-                        <option value="Saint Vincent">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Saint Vincent</font>
-                            </font>
-                        </option>
-                        <option value="Samoa">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Samoa</font>
-                            </font>
-                        </option>
-                        <option value="San Marino">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Saint Marin</font>
-                            </font>
-                        </option>
-                        <option value="Sao Tome and Principe">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sao Tomé et Principe</font>
-                            </font>
-                        </option>
-                        <option value="Saudi Arabia">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Arabie Saoudite</font>
-                            </font>
-                        </option>
-                        <option value="Senegal">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sénégal</font>
-                            </font>
-                        </option>
-                        <option value="Serbia and Montenegro">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Serbie et Monténégro</font>
-                            </font>
-                        </option>
-                        <option value="Seychelles">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">les Seychelles</font>
-                            </font>
-                        </option>
-                        <option value="Sierra Leone">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sierra Leone</font>
-                            </font>
-                        </option>
-                        <option value="Singapore">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Singapour</font>
-                            </font>
-                        </option>
-                        <option value="Slovakia">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Slovaquie</font>
-                            </font>
-                        </option>
-                        <option value="Slovenia">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Slovénie</font>
-                            </font>
-                        </option>
-                        <option value="Solomon Islands">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">îles Salomon</font>
-                            </font>
-                        </option>
-                        <option value="Somalia">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Somalie</font>
-                            </font>
-                        </option>
-                        <option value="South Africa">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Afrique du Sud</font>
-                            </font>
-                        </option>
-                        <option value="Spain">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Espagne</font>
-                            </font>
-                        </option>
-                        <option value="Sri Lanka">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sri Lanka</font>
-                            </font>
-                        </option>
-                        <option value="Sudan">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Soudan</font>
-                            </font>
-                        </option>
-                        <option value="Suriname">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Suriname</font>
-                            </font>
-                        </option>
-                        <option value="Swaziland">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Swaziland</font>
-                            </font>
-                        </option>
-                        <option value="Sweden">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Suède</font>
-                            </font>
-                        </option>
-                        <option value="Switzerland">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Suisse</font>
-                            </font>
-                        </option>
-                        <option value="Syria">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Syrie</font>
-                            </font>
-                        </option>
-                        <option value="Taiwan">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Taïwan</font>
-                            </font>
-                        </option>
-                        <option value="Tajikistan">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Tadjikistan</font>
-                            </font>
-                        </option>
-                        <option value="Tanzania">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Tanzanie</font>
-                            </font>
-                        </option>
-                        <option value="Thailand">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Thaïlande</font>
-                            </font>
-                        </option>
-                        <option value="Togo">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Aller</font>
-                            </font>
-                        </option>
-                        <option value="Tonga">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Tonga</font>
-                            </font>
-                        </option>
-                        <option value="Trinidad and Tobago">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Trinité-et-Tobago</font>
-                            </font>
-                        </option>
-                        <option value="Tunisia">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Tunisie</font>
-                            </font>
-                        </option>
-                        <option value="Turkey">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">dinde</font>
-                            </font>
-                        </option>
-                        <option value="Turkmenistan">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Turkménistan</font>
-                            </font>
-                        </option>
-                        <option value="Tuvalu">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Tuvalu</font>
-                            </font>
-                        </option>
-                        <option value="Uganda">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Ouganda</font>
-                            </font>
-                        </option>
-                        <option value="Ukraine">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Ukraine</font>
-                            </font>
-                        </option>
-                        <option value="United Arab Emirates">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Emirats Arabes Unis</font>
-                            </font>
-                        </option>
-                        <option value="United Kingdom">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Royaume-Uni</font>
-                            </font>
-                        </option>
-                        <option value="United States">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">États Unis</font>
-                            </font>
-                        </option>
-                        <option value="Uruguay">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Uruguay</font>
-                            </font>
-                        </option>
-                        <option value="Uzbekistan">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Ouzbékistan</font>
-                            </font>
-                        </option>
-                        <option value="Vanuatu">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Vanuatu</font>
-                            </font>
-                        </option>
-                        <option value="Vatican City">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Cité du Vatican</font>
-                            </font>
-                        </option>
-                        <option value="Venezuela">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Venezuela</font>
-                            </font>
-                        </option>
-                        <option value="Vietnam">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Vietnam</font>
-                            </font>
-                        </option>
-                        <option value="Yemen">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Yémen</font>
-                            </font>
-                        </option>
-                        <option value="Zambia">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Zambie</font>
-                            </font>
-                        </option>
-                        <option value="Zimbabwe">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Zimbabwe</font>
-                            </font>
-                        </option>
-                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                        style="width: 305.656px;"><span class="selection"><span
-                                class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true"
-                                aria-expanded="false" tabindex="0" aria-labelledby="select2-country-ul-container"><span
-                                    class="select2-selection__rendered" id="select2-country-ul-container"
-                                    title="Choisissez le pays"><span class="select2-selection__clear">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">×</font>
-                                        </font>
-                                    </span>
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Choisissez le pays</font>
-                                    </font>
-                                </span><span class="select2-selection__arrow" role="presentation"><b
-                                        role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                            aria-hidden="true"></span></span>
+
+                    </select>
                 </div>
             </div>
+
+
 
             <div class="form-group row">
                 <label for="address " class="col-sm-4 col-form-label">
@@ -694,17 +213,10 @@
                 </div>
             </div>
 
-            <div class="form-group row">
-                <label for="address2 " class="col-sm-4 col-form-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Adresse 2</font>
-                    </font>
-                </label>
-                <div class="col-sm-8">
-                    <textarea class="form-control" name="address2" id="address2" rows="2"
-                        placeholder="Adresse du fabricant2"></textarea>
-                </div>
-            </div>
+
+
+
+
 
             <div class="form-group row">
                 <label for="details" class="col-sm-4 col-form-label">
@@ -717,6 +229,8 @@
                         placeholder="Détails du fabricant" tabindex="4"></textarea>
                 </div>
             </div>
+
+
             <div class="form-group row">
                 <label for="previous_balance" class="col-sm-4 col-form-label">
                     <font style="vertical-align: inherit;">
@@ -724,34 +238,28 @@
                     </font>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="previous_balance" id="previous_balance" type="text" min="0"
-                        placeholder="Solde précédent" tabindex="5">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.previous_balance.errors }"
+                        formControlName="previous_balance" class="form-control" name="previous_balance"
+                        id="previous_balance" type="text" min="0" placeholder="Solde précédent" tabindex="5">
+
+                    <div *ngIf="submitted && f.previous_balance.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.previous_balance.errors.required">
+                            {{msg.validationMessage.previous_balance}}</div>
+                    </div>
+
                 </div>
             </div>
         </div>
 
-        <div class="form-group row">
-            <label for="example-text-input" class="col-sm-4 col-form-label"></label>
-            <div class="col-sm-6">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;"><input type="submit" id="add-manufacturer"
-                                    class="btn btn-primary btn-large" name="add-manufacturer" value="Enregistrer "
-                                    tabindex="6"></font>
-                        </font>
-                    </font>
-                </font>
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;"><input type="submit"
-                                    value="Enregistrer et ajouter un autre" name="add-manufacturer-another"
-                                    class="btn btn-large btn-success" id="add-manufacturer-another" tabindex="5"></font>
-                        </font>
-                    </font>
-                </font>
-            </div>
+        <div class="col-sm-3">
+            <button (click)="add()" type="button" class="btn btn-info">
+                <i class="fas fa-save"></i>
+                Sauvegarder
+            </button>
+            <button (click)="reset()" type="button" class="btn btn-danger">
+                <i class="fas fa-times"></i>
+                Annuler
+            </button>
         </div>
     </div>
 </form>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { URLLoader } from './../../../../../configs/URLLoader';
+import { URLLoader } from 'src/app/content/main/configs/URLLoader';
 
 @Component({
   selector: 'app-invoice',
@@ -9,23 +9,37 @@ import { URLLoader } from './../../../../../configs/URLLoader';
 })
 export class InvoiceComponent extends URLLoader implements OnInit {
 
- 
-  constructor(private _router: Router) {
-    super()
-  }
 
-  ngOnInit(): void {
-    super.loadScripts()
-    super.show('Pharma Life', 'Cette Application est en cours de développment.', 'info')
-  }
+
+
+
 
   moveEditInvoice() {
-    
+
     this._router.navigate(['/editinvoice']);
   }
 
   moveViewInvoice() {
     this._router.navigate(['/viewinvoice']);
   }
+
+
+
+
+  showsummary: boolean = false
+  showgraphic: boolean = false
+  invoices$
+  id = 0
+
+
+  constructor(private _router: Router) {
+    super()
+
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+
 
 }

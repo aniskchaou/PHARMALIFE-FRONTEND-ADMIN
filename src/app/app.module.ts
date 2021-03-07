@@ -20,18 +20,20 @@ import { StockModule } from './content/modules/stock/stock.module';
 import { SupplierModule } from './content/modules/supplier/supplier.module';
 import { TypeModule } from './content/modules/type/type.module';
 import { SharedModule } from './content/shared/shared.module';
-import { ViewCategoryComponent } from './view-category/view-category.component';
-
+import { ViewCategoryComponent } from './content/modules/category/components/view-category/view-category.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-   
+
     ViewCategoryComponent,
-   
+
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BuyModule,
     CategoryModule,
     ClientModule,
@@ -44,9 +46,10 @@ import { ViewCategoryComponent } from './view-category/view-category.component';
     TypeModule,
     BrowserModule,
     SharedModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: ''}],
+  providers: [{ provide: APP_BASE_HREF, useValue: '' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

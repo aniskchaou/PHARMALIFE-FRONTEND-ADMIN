@@ -4,12 +4,15 @@ import { AddConstructorComponent } from './components/add-constructor/add-constr
 import { EditConstructorComponent } from './components/edit-constructor/edit-constructor.component';
 import { CustructorComponent } from './components/custructor/custructor.component';
 import { ViewConstructorComponent } from './components/view-constructor/view-constructor.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [AddConstructorComponent,EditConstructorComponent,CustructorComponent,ViewConstructorComponent],
+  declarations: [AddConstructorComponent, EditConstructorComponent, CustructorComponent, ViewConstructorComponent],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule
   ]
 })

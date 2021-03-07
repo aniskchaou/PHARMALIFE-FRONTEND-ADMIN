@@ -1,22 +1,14 @@
 <form class="form-vertical" id="insert_product" name="insert_product" enctype="multipart/form-data" method="post"
-    accept-charset="utf-8" novalidate="novalidate">
-    <input type="hidden" name="csrf_test_name" value="6ea5babaa8a9985f88b3a90fab3fbf4d">
+    [formGroup]="medicamentForm" accept-charset="utf-8" novalidate="novalidate">
+
+
     <div class="panel-body">
         <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group row">
-                    <label for="barcode_or_qrcode" class="col-sm-4 col-form-label">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Code à barres ou QRcode </font>
-                        </font><i class="text-danger"></i>
-                    </label>
-                    <div class="col-sm-8">
-                        <input class="form-control" name="product_id" type="text" id="product_id"
-                            placeholder="Code à barres ou QRcode " tabindex="1">
-                    </div>
-                </div>
 
-            </div>
+
+
+
+
             <div class="col-sm-6">
                 <div class="form-group row">
                     <label for="product_name" class="col-sm-4 col-form-label">
@@ -29,26 +21,27 @@
                         </i>
                     </label>
                     <div class="col-sm-8">
-                        <input class="form-control" tabindex="1" name="product_name" type="text" id="product_name"
-                            placeholder="Nom du médicament" required="" aria-required="true">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.product_name.errors }"
+                            formControlName="product_name" class="form-control" tabindex="1" name="product_name"
+                            type="text" id="product_name" placeholder="Nom du médicament" required=""
+                            aria-required="true">
+
+                        <div *ngIf="submitted && f.product_name.errors" class="alert alert-danger">
+                            <div *ngIf="submitted && f.product_name.errors.required">
+                                {{msg.validationMessage.product_name}}</div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
+
+
         </div>
         <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group row">
-                    <label for="strength" class="col-sm-4 col-form-label">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Force </font>
-                        </font><i class="text-danger"></i>
-                    </label>
-                    <div class="col-sm-8">
-                        <input class="form-control" tabindex="1" name="strength" type="text" id="strength"
-                            placeholder="Force">
-                    </div>
-                </div>
-            </div>
+
+
+
 
             <div class="col-sm-6">
                 <div class="form-group row">
@@ -62,14 +55,25 @@
                         </i>
                     </label>
                     <div class="col-sm-8">
-                        <input class="form-control" name="generic_name" type="text" id="generic_name"
-                            placeholder="Nom générique" tabindex="2" required="required" aria-required="true">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.generic_name.errors }"
+                            formControlName="generic_name" class="form-control" name="generic_name" type="text"
+                            id="generic_name" placeholder="Nom générique" tabindex="2" required="required"
+                            aria-required="true">
+
+                        <div *ngIf="submitted && f.generic_name.errors" class="alert alert-danger">
+                            <div *ngIf="submitted && f.generic_name.errors.required">
+                                {{msg.validationMessage.generic_name}}</div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row">
+
+
             <div class="col-sm-6">
                 <div class="form-group row">
                     <label for="box_size" class="col-sm-4 col-form-label">
@@ -82,11 +86,20 @@
                         </i>
                     </label>
                     <div class="col-sm-8">
-                        <input class="form-control" name="box_size" type="text" id="box_size"
-                            placeholder="Taille de boîte" tabindex="3" min="0" required="required" aria-required="true">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.box_size.errors }" formControlName="box_size"
+                            class="form-control" name="box_size" type="text" id="box_size" placeholder="Taille de boîte"
+                            tabindex="3" min="0" required="required" aria-required="true">
+
+                        <div *ngIf="submitted && f.box_size.errors" class="alert alert-danger">
+                            <div *ngIf="submitted && f.box_size.errors.required">
+                                {{msg.validationMessage.box_size}}</div>
+                        </div>
+
                     </div>
                 </div>
             </div>
+
+
             <div class="col-sm-6">
                 <div class="form-group row">
                     <label for="unit" class="col-sm-4 col-form-label">
@@ -120,18 +133,7 @@
                             </option>
 
 
-                        </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                            style="width: 315.656px;"><span class="selection"><span
-                                    class="select2-selection select2-selection--single" role="combobox"
-                                    aria-haspopup="true" aria-expanded="false" tabindex="4"
-                                    aria-labelledby="select2-unit-container"><span class="select2-selection__rendered"
-                                        id="select2-unit-container"><span class="select2-selection__placeholder">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Sélectionnez l'option</font>
-                                            </font>
-                                        </span></span><span class="select2-selection__arrow" role="presentation"><b
-                                            role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                                aria-hidden="true"></span></span>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -146,11 +148,20 @@
                         </font>
                     </label>
                     <div class="col-sm-8">
-                        <input class="form-control" tabindex="5" name="product_location" type="text"
-                            id="product_location" placeholder="Étagère de médecine">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.product_location.errors }"
+                            formControlName="product_location" class="form-control" tabindex="5" name="product_location"
+                            type="text" id="product_location" placeholder="Étagère de médecine">
+
+                        <div *ngIf="submitted && f.product_location.errors" class="alert alert-danger">
+                            <div *ngIf="submitted && f.product_location.errors.required">
+                                {{msg.validationMessage.product_location}}</div>
+                        </div>
+
                     </div>
                 </div>
             </div>
+
+
             <div class="col-sm-6">
                 <div class="form-group row">
                     <label for="description" class="col-sm-4 col-form-label">
@@ -159,14 +170,23 @@
                         </font>
                     </label>
                     <div class="col-sm-8">
-                        <textarea class="form-control" name="description" id="description" rows="3" tabindex="6"
+                        <textarea [ngClass]="{ 'is-invalid': submitted && f.description.errors }" class="form-control"
+                            formControlName="description" name="description" id="description" rows="3" tabindex="6"
                             placeholder="Détails"></textarea>
+
+                        <div *ngIf="submitted && f.description.errors" class="alert alert-danger">
+                            <div *ngIf="submitted && f.description.errors.required">
+                                {{msg.validationMessage.description}}</div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
         <div class="row">
             <div class="col-sm-6">
+
                 <div class="form-group row">
                     <label for="product_model" class="col-sm-4 col-form-label">
                         <font style="vertical-align: inherit;">
@@ -198,22 +218,12 @@
                                 </font>
                             </option>
 
-                        </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                            style="width: 315.656px;"><span class="selection"><span
-                                    class="select2-selection select2-selection--single" role="combobox"
-                                    aria-haspopup="true" aria-expanded="false" tabindex="7"
-                                    aria-labelledby="select2-category_id-container"><span
-                                        class="select2-selection__rendered" id="select2-category_id-container"><span
-                                            class="select2-selection__placeholder">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Sélectionnez l'option</font>
-                                            </font>
-                                        </span></span><span class="select2-selection__arrow" role="presentation"><b
-                                            role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                                aria-hidden="true"></span></span>
+                        </select>
                     </div>
                 </div>
             </div>
+
+
             <div class="col-sm-6">
                 <div class="form-group row">
                     <label for="image" class="col-sm-4 col-form-label">
@@ -222,12 +232,16 @@
                         </font>
                     </label>
                     <div class="col-sm-8">
-                        <input type="file" tabindex="8" name="image" class="form-control" id="image">
+                        <input formControlName="image" type="file" tabindex="8" name="image" class="form-control"
+                            id="image">
                     </div>
                 </div>
             </div>
+
+
         </div>
         <div class="row">
+
             <div class="col-sm-6">
                 <div class="form-group row">
                     <label for="category_id" class="col-sm-4 col-form-label">
@@ -256,11 +270,6 @@
                                 </font>
                             </option>
 
-                            <option value="1">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Catégorie_1</font>
-                                </font>
-                            </option>
 
                             <option value="7">
                                 <font style="vertical-align: inherit;">
@@ -292,43 +301,9 @@
                                 </font>
                             </option>
 
-                            <option value="4">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Solution de Resperitory</font>
-                                </font>
-                            </option>
 
-                            <option value="6">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Sachet</font>
-                                </font>
-                            </option>
 
-                            <option value="12">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Solution</font>
-                                </font>
-                            </option>
-
-                            <option value="2">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">tablette</font>
-                                </font>
-                            </option>
-
-                        </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                            style="width: 315.656px;"><span class="selection"><span
-                                    class="select2-selection select2-selection--single" role="combobox"
-                                    aria-haspopup="true" aria-expanded="false" tabindex="9"
-                                    aria-labelledby="select2-category_id-container"><span
-                                        class="select2-selection__rendered" id="select2-category_id-container"><span
-                                            class="select2-selection__placeholder">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Sélectionnez l'option</font>
-                                            </font>
-                                        </span></span><span class="select2-selection__arrow" role="presentation"><b
-                                            role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                                aria-hidden="true"></span></span>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -345,25 +320,43 @@
                         </i>
                     </label>
                     <div class="col-sm-8">
-                        <input class="form-control text-right" name="price" type="text"
-                            onkeyup="if (!window.__cfRLUnblockHandlers) return false; Checkprice()" required="required"
-                            id="price" placeholder="0,00" tabindex="10" min="0" aria-required="true">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.price.errors }" formControlName="price"
+                            class="form-control text-right" name="price" type="text" required="required" id="price"
+                            placeholder="0,00" tabindex="10" min="0" aria-required="true">
+
+                        <div *ngIf="submitted && f.price.errors" class="alert alert-danger">
+                            <div *ngIf="submitted && f.price.errors.required">
+                                {{msg.validationMessage.price}}</div>
+                        </div>
+
                     </div>
                 </div>
             </div>
+
+
+
         </div>
 
 
         <div class="row">
+
+
             <div class="col-sm-6">
                 <div class="form-group row">
                     <label for="tax" class="col-sm-4 col-form-label">
                         <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">SGST </font>
+                            <font style="vertical-align: inherit;">TVA </font>
                         </font><i class="text-danger"></i>
                     </label>
                     <div class="col-sm-7">
-                        <input type="text" name="tax0" class="form-control" value="9.00">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.tax.errors }" formControlName="tax" type="text"
+                            name="tax" class="form-control" value="9.00">
+
+                        <div *ngIf="submitted && f.tax.errors" class="alert alert-danger">
+                            <div *ngIf="submitted && f.tax.errors.required">
+                                {{msg.validationMessage.tax}}</div>
+                        </div>
+
                     </div>
                     <div class="col-sm-1"> <i class="text-success">
                             <font style="vertical-align: inherit;">
@@ -372,40 +365,11 @@
                         </i></div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="form-group row">
-                    <label for="tax" class="col-sm-4 col-form-label">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">CGST </font>
-                        </font><i class="text-danger"></i>
-                    </label>
-                    <div class="col-sm-7">
-                        <input type="text" name="tax1" class="form-control" value="9.00">
-                    </div>
-                    <div class="col-sm-1"> <i class="text-success">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">%</font>
-                            </font>
-                        </i></div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="form-group row">
-                    <label for="tax" class="col-sm-4 col-form-label">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">IGST </font>
-                        </font><i class="text-danger"></i>
-                    </label>
-                    <div class="col-sm-7">
-                        <input type="text" name="tax2" class="form-control" value="18.00">
-                    </div>
-                    <div class="col-sm-1"> <i class="text-success">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">%</font>
-                            </font>
-                        </i></div>
-                </div>
-            </div>
+
+
+
+
+
         </div>
 
 
@@ -434,61 +398,14 @@
                                     <font style="vertical-align: inherit;">Advlent </font>
                                 </font>
                             </option>
-                            <option value="7">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Laboratoires Std Ltd.</font>
-                                </font>
-                            </option>
-                            <option value="6">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">GCL Pharmaceuticals Ltd</font>
-                                </font>
-                            </option>
-                            <option value="5">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">MPL Pharma</font>
-                                </font>
-                            </option>
-                            <option value="4">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">ACL</font>
-                                </font>
-                            </option>
-                            <option value="3">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Bexilo</font>
-                                </font>
-                            </option>
-                            <option value="2">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Farto &amp; Deto Pharmaceuticals Ltd</font>
-                                </font>
-                            </option>
-                            <option value="1">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">carré </font>
-                                </font>
-                            </option>
-                        </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                            style="width: 315.656px;"><span class="selection"><span
-                                    class="select2-selection select2-selection--single" role="combobox"
-                                    aria-haspopup="true" aria-expanded="false" tabindex="12"
-                                    aria-labelledby="select2--container"><span class="select2-selection__rendered"
-                                        id="select2--container"><span class="select2-selection__placeholder">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Sélectionnez l'option</font>
-                                            </font>
-                                        </span></span><span class="select2-selection__arrow" role="presentation"><b
-                                            role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                                aria-hidden="true"></span></span>
-                        <a data-target="#manufac_modal" data-toggle="modal"><i class="fa fa-plus"></i>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Ajouter un nouveau fabricant</font>
-                            </font>
-                        </a>
+
+                        </select>
+
                     </div>
                 </div>
             </div>
+
+
 
             <div class="col-sm-6">
                 <div class="form-group row">
@@ -503,31 +420,30 @@
                         </i>
                     </label>
                     <div class="col-sm-8">
-                        <input type="text" tabindex="13"
-                            onkeyup="if (!window.__cfRLUnblockHandlers) return false; ProfitPrice(),checkmprice()"
+                        <input [ngClass]="{ 'is-invalid': submitted && f.manufacturer_price.errors }"
+                            formControlName="manufacturer_price" type="text" tabindex="13"
                             class="form-control text-right" name="manufacturer_price" placeholder="0,00"
                             required="required" min="0" id="mprice" aria-required="true">
-                        <span id="prft"></span>
+
+                        <div *ngIf="submitted && f.manufacturer_price.errors" class="alert alert-danger">
+                            <div *ngIf="submitted && f.manufacturer_price.errors.required">
+                                {{msg.validationMessage.manufacturer_price}}</div>
+                        </div>
 
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="form-group row">
-            <div class="col-sm-6">
-
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;"><input type="submit" id="add-product"
-                            class="btn btn-primary btn-large" name="add-product" value="Enregistrer " tabindex="14">
-                    </font>
-                </font>
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;"><input type="submit" value="Enregistrer et ajouter un autre"
-                            name="add-product-another" class="btn btn-large btn-success" id="add-product-another"
-                            tabindex="15"></font>
-                </font>
-            </div>
+        <div class="col-sm-3">
+            <button (click)="add()" type="button" class="btn btn-info">
+                <i class="fas fa-save"></i>
+                Sauvegarder
+            </button>
+            <button (click)="reset()" type="button" class="btn btn-danger">
+                <i class="fas fa-times"></i>
+                Annuler
+            </button>
         </div>
     </div>
 </form>

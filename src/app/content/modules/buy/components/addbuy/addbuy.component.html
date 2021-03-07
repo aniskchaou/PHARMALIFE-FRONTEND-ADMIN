@@ -1,10 +1,10 @@
 <form class="form-vertical" id="validate" name="insert_purchase" enctype="multipart/form-data" method="post"
-    accept-charset="utf-8" novalidate="novalidate">
-    <input type="hidden" name="csrf_test_name" value="6ea5babaa8a9985f88b3a90fab3fbf4d">
-
+    [formGroup]="buyForm" accept-charset="utf-8" novalidate="novalidate">
 
     <div class="row" id="manufacturer_info">
         <div class="col-sm-6">
+
+
             <div class="form-group row">
                 <label for="manufacturer_sss" class="col-sm-3 col-form-label">
                     <font style="vertical-align: inherit;">
@@ -17,9 +17,7 @@
                 </label>
                 <div class="col-sm-9">
                     <select name="manufacturer_id" id="manufacturer_id" class="form-control select2-hidden-accessible"
-                        required="required" tabindex="-1"
-                        onchange="if (!window.__cfRLUnblockHandlers) return false; product_pur_or_list()"
-                        aria-hidden="true" aria-required="true">
+                        required="required" tabindex="-1" aria-hidden="true" aria-required="true">
 
 
                         <option value="">
@@ -37,54 +35,14 @@
                                 <font style="vertical-align: inherit;">Farto &amp; Deto Pharmaceuticals Ltd</font>
                             </font>
                         </option>
-                        <option value="3">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Bexilo</font>
-                            </font>
-                        </option>
-                        <option value="4">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">ACL</font>
-                            </font>
-                        </option>
-                        <option value="5">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">MPL Pharma</font>
-                            </font>
-                        </option>
-                        <option value="6">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">GCL Pharmaceuticals Ltd</font>
-                            </font>
-                        </option>
-                        <option value="7">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Laboratoires Std Ltd.</font>
-                            </font>
-                        </option>
-                        <option value="8">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Advlent </font>
-                            </font>
-                        </option>
-                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                        style="width: 358.875px;"><span class="selection"><span
-                                class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true"
-                                aria-expanded="false" tabindex="1"
-                                aria-labelledby="select2-manufacturer_id-container"><span
-                                    class="select2-selection__rendered" id="select2-manufacturer_id-container"><span
-                                        class="select2-selection__placeholder">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Sélectionnez l'option</font>
-                                        </font>
-                                    </span></span><span class="select2-selection__arrow" role="presentation"><b
-                                        role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                            aria-hidden="true"></span></span>
+
+                    </select>
                 </div>
 
 
             </div>
         </div>
+
 
         <div class="col-sm-6">
             <div class="form-group row">
@@ -98,12 +56,22 @@
                     </i>
                 </label>
                 <div class="col-sm-8">
-                    <input type="text" tabindex="2" class="form-control datepicker hasDatepicker" name="purchase_date"
+                    <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                        [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                        type="text" tabindex="2" class="form-control datepicker hasDatepicker" name="purchase_date"
                         value="2020-12-18" id="purdate" required="" aria-required="true">
+
+                    <div *ngIf="submitted && f.purchase_date.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.purchase_date.errors.required">
+                            {{msg.validationMessage.purchase_date}}</div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <div class="row">
         <div class="col-sm-6">
@@ -118,11 +86,20 @@
                     </i>
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" tabindex="3" class="form-control" name="chalan_no" placeholder="No de facture"
+                    <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                        type="text" tabindex="3" class="form-control" name="chalan_no" placeholder="No de facture"
                         id="invoice_no" required="" aria-required="true">
+
+                    <div *ngIf="submitted && f.chalan_no.errors" class="alert alert-danger">
+                        <div *ngIf="submitted && f.chalan_no.errors.required">
+                            {{msg.validationMessage.chalan_no}}</div>
+                    </div>
+
                 </div>
             </div>
         </div>
+
+
 
         <div class="col-sm-6">
             <div class="form-group row">
@@ -137,9 +114,16 @@
                 </div>
             </div>
         </div>
+
+
     </div>
     <div class="row">
+
+
+
         <div class="col-sm-6" id="payment_from_1">
+
+
             <div class="form-group row">
                 <label for="payment_type" class="col-sm-3 col-form-label">
                     <font style="vertical-align: inherit;">
@@ -169,22 +153,7 @@
                                 <font style="vertical-align: inherit;">Paiement dû</font>
                             </font>
                         </option>
-                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                        style="width: 358.875px;"><span class="selection"><span
-                                class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true"
-                                aria-expanded="false" tabindex="5" aria-labelledby="select2-paytype-86-container"><span
-                                    class="select2-selection__rendered" id="select2-paytype-86-container"
-                                    title="Paiement en espèces"><span class="select2-selection__clear">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">×</font>
-                                        </font>
-                                    </span>
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Paiement en espèces</font>
-                                    </font>
-                                </span><span class="select2-selection__arrow" role="presentation"><b
-                                        role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                            aria-hidden="true"></span></span>
+                    </select>
 
 
 
@@ -192,6 +161,8 @@
 
             </div>
         </div>
+
+
         <div class="col-sm-6" id="bank_div" style="display: none;">
             <div class="form-group row">
                 <label for="bank" class="col-sm-4 col-form-label">Bank <i class="text-danger">*</i></label>
@@ -201,23 +172,15 @@
                         <option value="">Select Location</option>
                         <option value="OJZ4ZM2W9T">Demo international Bank </option>
                         <option value="A1IZI9DBRW">Netro Bank Ltd </option>
-                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                        style="width: auto;"><span class="selection"><span
-                                class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true"
-                                aria-expanded="false" tabindex="0" aria-labelledby="select2-bank_id-container"><span
-                                    class="select2-selection__rendered" id="select2-bank_id-container"><span
-                                        class="select2-selection__placeholder">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Sélectionnez l'option</font>
-                                        </font>
-                                    </span></span><span class="select2-selection__arrow" role="presentation"><b
-                                        role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                            aria-hidden="true"></span></span>
+                    </select>
 
                 </div>
 
             </div>
         </div>
+
+
+
     </div>
 
     <div class="table-responsive">
@@ -289,41 +252,49 @@
             <tbody id="addPurchaseItem">
                 <tr>
                     <td class="span3 manufacturer">
-                        <input type="text" name="product_name" required=""
+                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                            type="text" name="product_name" required=""
                             class="form-control product_name productSelection"
                             onkeypress="if (!window.__cfRLUnblockHandlers) return false; product_pur_or_list(1);"
                             placeholder="Nom du médicament" id="product_name_1" tabindex="6" aria-required="true">
 
-                        <input type="hidden" class="autocomplete_hidden_value product_id_1" name="product_id[]"
+                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                            type="hidden" class="autocomplete_hidden_value product_id_1" name="product_id[]"
                             id="SchoolHiddenId">
 
-                        <input type="hidden" class="sl" value="1">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                            type="hidden" class="sl" value="1">
                     </td>
                     <td>
-                        <input type="text" name="batch_id[]" id="batch_id_1" class="form-control text-right"
-                            tabindex="7" placeholder="ID de lot" required="" aria-required="true">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                            type="text" name="batch_id[]" id="batch_id_1" class="form-control text-right" tabindex="7"
+                            placeholder="ID de lot" required="" aria-required="true">
                     </td>
                     <td>
-                        <input type="text" name="expeire_date[]" id="expeire_date_1"
+                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                            type="text" name="expeire_date[]" id="expeire_date_1"
                             class="form-control datepicker hasDatepicker" tabindex="8" placeholder="Date d'expiration"
                             onchange="if (!window.__cfRLUnblockHandlers) return false; checkExpiredate(1)" required=""
                             aria-required="true">
                     </td>
 
                     <td class="wt">
-                        <input type="text" id="available_quantity_1" class="form-control text-right stock_ctn_1"
+                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                            type="text" id="available_quantity_1" class="form-control text-right stock_ctn_1"
                             placeholder="0,00" readonly="">
                     </td>
 
                     <td class="text-right">
-                        <input type="text" name="product_quantity[]" id="quantity_1"
+                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                            type="text" name="product_quantity[]" id="quantity_1"
                             class="form-control text-right store_cal_1"
                             onkeyup="if (!window.__cfRLUnblockHandlers) return false; calculate_store(1),checkqty(1);"
                             onchange="if (!window.__cfRLUnblockHandlers) return false; calculate_store(1);"
                             placeholder="0,00" value="" min="0" tabindex="9" required="required" aria-required="true">
                     </td>
                     <td class="test">
-                        <input type="text" name="product_rate[]"
+                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                            type="text" name="product_rate[]"
                             onkeyup="if (!window.__cfRLUnblockHandlers) return false; calculate_store(1),checkqty(1);"
                             onchange="if (!window.__cfRLUnblockHandlers) return false; calculate_store(1);"
                             id="product_rate_1" class="form-control product_rate_1 text-right" placeholder="0,00"
@@ -332,7 +303,8 @@
 
 
                     <td class="text-right">
-                        <input class="form-control total_price text-right" type="text" name="total_price[]"
+                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                            class="form-control total_price text-right" type="text" name="total_price[]"
                             id="total_price_1" value="0.00" readonly="readonly">
                     </td>
                     <td>
@@ -350,8 +322,8 @@
                     <td colspan="2">
 
 
-                        <input type="hidden" name="baseUrl" class="baseUrl"
-                            value="https://pharmacyv5.bdtask.com/pharmacare-9.3_demo/">
+                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                            type="hidden" name="baseUrl" class="baseUrl">
                     </td>
                     <td class="text-right" colspan="4"><b>
                             <font style="vertical-align: inherit;">
@@ -359,7 +331,8 @@
                             </font>
                         </b></td>
                     <td class="text-right">
-                        <input type="text" id="grandTotal" class="text-right form-control" name="grand_total_price"
+                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier"
+                            type="text" id="grandTotal" class="text-right form-control" name="grand_total_price"
                             value="0.00" readonly="readonly">
                     </td>
                     <td>
@@ -372,17 +345,14 @@
         </table>
     </div>
 
-    <div class="form-group row">
-        <div class="col-sm-6">
-            <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;"><input type="submit" id="add_purchase"
-                                class="btn btn-primary btn-large" name="add-purchase" value="Soumettre"></font>
-                    </font>
-                </font>
-            </font>
-
-        </div>
+    <div class="col-sm-3">
+        <button (click)="add()" type="button" class="btn btn-info">
+            <i class="fas fa-save"></i>
+            Sauvegarder
+        </button>
+        <button (click)="reset()" type="button" class="btn btn-danger">
+            <i class="fas fa-times"></i>
+            Annuler
+        </button>
     </div>
 </form>

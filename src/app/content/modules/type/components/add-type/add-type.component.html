@@ -1,26 +1,38 @@
+<form class="form-group row" [formGroup]="typeForm">
 
-    <div class="form-group row">
-        <label for="type_name" class="col-sm-3 col-form-label">
+
+    <label for="type_name" class="col-sm-3 col-form-label">
+        <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Nom du type </font>
+        </font><i class="text-danger">
             <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">Nom du type </font>
-            </font><i class="text-danger">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">*</font>
-                </font>
-            </i>
-        </label>
-        <div class="col-sm-4">
-            <input class="form-control" name="type_name" id="type_name" type="text" placeholder="Nom du type"
-                required="" aria-required="true">
-        </div>
-        <div class="col-sm-2">
-            <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;"><input type="submit" id="add-customer"
-                                class="btn btn-success btn-large" name="add-customer" value="enregistrer"></font>
-                    </font>
-                </font>
+                <font style="vertical-align: inherit;">*</font>
             </font>
+        </i>
+    </label>
+    <div class="col-sm-4">
+        <input [ngClass]="{ 'is-invalid': submitted && f.type_name.errors }" formControlName="type_name"
+            class="form-control" name="type_name" id="type_name" type="text" placeholder="Nom du type" required=""
+            aria-required="true">
+
+        <div *ngIf="submitted && f.type_name.errors" class="alert alert-danger">
+            <div *ngIf="submitted && f.type_name.errors.required">
+                {{msg.validationMessage.type_name}}</div>
         </div>
+
+
     </div>
+
+
+
+    <div class="col-sm-3">
+        <button (click)="add()" type="button" class="btn btn-info">
+            <i class="fas fa-save"></i>
+            Sauvegarder
+        </button>
+        <button (click)="reset()" type="button" class="btn btn-danger">
+            <i class="fas fa-times"></i>
+            Annuler
+        </button>
+    </div>
+</form>

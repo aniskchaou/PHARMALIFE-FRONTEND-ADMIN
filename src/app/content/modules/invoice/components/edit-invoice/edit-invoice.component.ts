@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-invoice.component.css']
 })
 export class EditInvoiceComponent implements OnInit {
-
-  constructor() { }
-
   ngOnInit(): void {
+
   }
+
 
 }

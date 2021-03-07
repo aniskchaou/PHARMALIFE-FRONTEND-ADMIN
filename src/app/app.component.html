@@ -6,7 +6,8 @@
 
 <!-- Right Panel -->
 
-<div id="right-panel" style="position: fixed; top: 0; left:21%; width:80%;" class="right-panel" *ngIf="!hasRoute('login')">
+<div id="right-panel" style="position: fixed; top: 0; left:21%; width:80%;" class="right-panel"
+    *ngIf="!hasRoute('login')">
 
     <!-- Header-->
     <header id="header" class="header">
@@ -105,10 +106,11 @@
                     </a>
 
                     <div class="user-menu dropdown-menu">
-                     <!--  <a class="nav-link" routerLink="/profile" href="#"><i class="fa fa-user"></i> My Profile</a>-->
+                        <!--  <a class="nav-link" routerLink="/profile" href="#"><i class="fa fa-user"></i> My Profile</a>-->
 
-                       
-                        <a class="nav-link" routerLink="/configuration" href="#"><i class="fa fa-cog"></i> Parametres</a>
+
+                        <a class="nav-link" routerLink="/configuration" href="#"><i class="fa fa-cog"></i>
+                            Parametres</a>
 
                         <a class="nav-link" routerLink="/login" href="#"><i class="fa fa-power-off"></i> Déconnexion</a>
                     </div>
@@ -170,19 +172,20 @@
                 </a>
             </div>
             <div class="login-form">
-             
-               
-                    <div class="form-group">
-                        <label>login</label>
-                        <input type="admin" class="form-control" placeholder="Email" value="admin@admin.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Password" value="admin">
-                    </div>
 
-                    <button routerLink="/dashboard" type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Connexion</button>
-               
+
+                <div class="form-group">
+                    <label>login</label>
+                    <input type="admin" class="form-control" placeholder="Email" value="admin@admin.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Password" value="admin">
+                </div>
+
+                <button routerLink="/dashboard" type="submit"
+                    class="btn btn-success btn-flat m-b-30 m-t-30">Connexion</button>
+
             </div>
         </div>
     </div>
@@ -220,3 +223,4 @@
 <script defer src="../assets/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
 <script defer src="../assets/vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
 <script defer src="../assets/js/init-scripts/data-table/datatables-init.js"></script>
+<script defer src="../assets/js/notification.js"></script>
