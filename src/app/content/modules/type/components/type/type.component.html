@@ -7,7 +7,6 @@
       <thead>
         <tr>
           <th>Nom</th>
-          <th>Description</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -15,92 +14,25 @@
 
         <tr *ngFor="let item of types$">
           <td>{{item.type_name}}</td>
-          <td>médicament générique</td>
           <td>
-            <button (click)="moveEditType()" type="button" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm"
-              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
+            <button data-toggle="modal" data-target="#editType" (click)="edit(item.id)" type="button"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="delete(item.id)"><i
                 class="fas fa-trash-alt"></i></button>
           </td>
         </tr>
-
-
-        <tr>
-          <td>médicament générique</td>
-          <td>médicament générique</td>
-          <td>
-            <button (click)="moveEditType()" type="button" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm"
-              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
-                class="fas fa-trash-alt"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <td>médicament biosimilaire</td>
-          <td>médicament biosimilaire</td>
-          <td>
-            <button (click)="moveEditType()" type="button" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm"
-              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
-                class="fas fa-trash-alt"></i></button>
-          </td>
-        </tr>
-
       </tbody>
       <tfoot>
         <tr>
           <th>Nom</th>
-          <th>Description</th>
           <th>Actions</th>
         </tr>
       </tfoot>
     </table>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addType">Ajouter</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addType"><i
+        class="fas fa-plus-circle"></i> Créer</button>
 
-    <div class="modal fade" id="addType" data-backdrop="false" tabindex="-1" role="dialog"
-      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-add-type></app-add-type>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="editType" data-backdrop="false" tabindex="-1" role="dialog"
-      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-edit-type></app-edit-type>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-modal-type></app-modal-type>
 
 
   </div>

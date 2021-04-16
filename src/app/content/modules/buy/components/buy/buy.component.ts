@@ -42,6 +42,7 @@ export class BuyComponent extends URLLoader implements OnInit {
   edit(id) {
     this.setId(id)
     this.buyTestService.ID.next(id.toString())
+
   }
 
   delete(id) {

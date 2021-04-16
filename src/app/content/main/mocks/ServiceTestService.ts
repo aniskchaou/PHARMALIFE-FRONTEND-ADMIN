@@ -7,7 +7,22 @@ import Service from "../interfaces/Service";
 })
 export default class ServiceTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _service = []
+    _service = [{
+        "id": 1,
+        "service_name": "traitement et suivi des patients",
+        "charge": "49.26",
+        "description": "string",
+        "tax": "20"
+    }, {
+        "id": 2,
+        "service_name": "dépistage",
+        "charge": "34.44",
+        "description": "string",
+        "tax": "16"
+    }]
+
+
+
     static id = 0
 
     public getAll() {
@@ -32,7 +47,8 @@ export default class ServiceTestService implements Service {
     };
 
     public remove(id) {
-        this._service.splice(id, 1);
+        var service = this.get(id)
+        this._service.splice(this._service.indexOf(service), 1);
     };
 
 

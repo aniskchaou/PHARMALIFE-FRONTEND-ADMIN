@@ -5,11 +5,12 @@ import { EditBuyComponent } from './components/edit-buy/edit-buy.component';
 import { BuyComponent } from './components/buy/buy.component';
 import { AddbuyComponent } from './components/addbuy/addbuy.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalBuyComponent } from './components/modal-buy/modal-buy.component';
 
 
 
 @NgModule({
-  declarations: [ViewBuyComponent, EditBuyComponent, BuyComponent, AddbuyComponent],
+  declarations: [ViewBuyComponent, EditBuyComponent, BuyComponent, AddbuyComponent, ModalBuyComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,

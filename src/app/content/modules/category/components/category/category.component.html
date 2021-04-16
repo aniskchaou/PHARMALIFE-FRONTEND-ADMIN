@@ -7,89 +7,29 @@
       <thead>
         <tr>
           <th>Nom</th>
-          <th>Description</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of categorys$">
           <td>{{item.category_name}}</td>
-          <td>Analgésiques et Anti-inflammatoires.</td>
           <td>
-            <button (click)="moveEditCategory()" type="button" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm"
-              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
+            <button (click)="edit(item.id)" data-toggle="modal" data-target="#editCategory" type="button"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="delete(item.id)"><i
                 class="fas fa-trash-alt"></i></button>
           </td>
-
         </tr>
-        <tr>
-          <td>Antibiotiques et Antibactériens</td>
-          <td>Antibiotiques et Antibactériens</td>
-          <td>
-            <button (click)="moveEditCategory()" type="button" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm"
-              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
-                class="fas fa-trash-alt"></i></button>
-          </td>
-
-        </tr>
-
       </tbody>
       <tfoot>
         <tr>
           <th>Nom</th>
-          <th>Description</th>
           <th>Actions</th>
         </tr>
       </tfoot>
     </table>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCategory">Ajouter</button>
-
-  </div>
-</div>
-
-<div class="modal fade" id="addCategory" tabindex="-1" data-backdrop="false" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-add-category></app-add-category>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="editCategory" tabindex="-1" data-backdrop="false" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-edit-category></app-edit-category>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-      </div>
-    </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCategory"><i
+        class="fas fa-plus-circle"></i> Créer</button>
+    <app-modal-category></app-modal-category>
   </div>
 </div>

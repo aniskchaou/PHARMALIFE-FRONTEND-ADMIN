@@ -17,41 +17,17 @@
         <tr *ngFor="let item of services$">
           <td>{{item.service_name}}</td>
           <td>{{item.charge}}$</td>
-          <td>23%</td>
+          <td>{{item.tax}}%</td>
           <td>
-            <button type="button" (click)="moveEditService()" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm"
-              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
+            <button type="button" data-toggle="modal" data-target="#editService" (click)="edit(item.id)"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="delete(ite.id)"><i
                 class="fas fa-trash-alt"></i></button>
           </td>
         </tr>
 
 
-        <tr>
-          <td>traitement et suivi des patients</td>
-          <td>34.44$</td>
-          <td>23%</td>
-          <td>
-            <button type="button" (click)="moveEditService()" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm"
-              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
-                class="fas fa-trash-alt"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <td>dépistage</td>
-          <td>49.26$</td>
-          <td>16%</td>
-          <td>
-            <button type="button" (click)="moveEditService()" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm"
-              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
-                class="fas fa-trash-alt"></i></button>
-          </td>
-        </tr>
+
 
       </tbody>
       <tfoot>
@@ -63,50 +39,9 @@
         </tr>
       </tfoot>
     </table>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addService">Ajouter</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addService"><i
+        class="fas fa-plus-circle"></i> Créer</button>
   </div>
 </div>
 
-
-<div class="modal fade" data-backdrop="false" id="addService" tabindex="-1" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-add-service></app-add-service>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="editService" data-backdrop="false" tabindex="-1" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-edit-service></app-edit-service>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-      </div>
-    </div>
-  </div>
-</div>
+<app-modal-service></app-modal-service>

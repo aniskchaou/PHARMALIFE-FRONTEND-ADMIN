@@ -18,10 +18,9 @@
           <td>3D232</td>
           <td>Eugène Boileau </td>
           <td>22/11/2020</td>
-          <td class="badge badge-primary">$320</td>
+          <td><span class="badge badge-primary">320$</span></td>
           <td>
-            <button (click)="moveEditInvoice()" type="button" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
             <button type="button" class="btn btn-danger btn-sm"
               onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
                 class="fas fa-trash-alt"></i></button>
@@ -39,7 +38,8 @@
         </tr>
       </tfoot>
     </table>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addInvoice">Ajouter</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addInvoice"><i
+        class="fas fa-plus-circle"></i> Créer</button>
 
   </div>
 </div>

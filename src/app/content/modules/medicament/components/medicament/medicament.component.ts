@@ -44,6 +44,7 @@ export class MedicamentComponent extends URLLoader implements OnInit {
   edit(id) {
     this.setId(id)
     this.medicamentTestService.ID.next(id.toString())
+
   }
 
   delete(id) {

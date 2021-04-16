@@ -22,34 +22,19 @@
         <tr *ngFor="let item of medicaments$">
           <td>{{item.product_name}}</td>
           <td>{{item.generic_name}}</td>
-          <td>Analgésiques et Anti-inflammatoires</td>
+          <td>{{item.category_id}}</td>
           <td>{{item.manufacter_id}}</td>
           <td>{{item.product_location}}</td>
-          <td>13.04$</td>
+          <td>{{item.price}} $</td>
           <td>
-            <button (click)="moveEditMedicament()" type="button" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm"
-              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
+            <button data-toggle="modal" data-target="#editMedicament" (click)="edit(item.id)" type="button"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="delete(item.id)"><i
                 class="fas fa-trash-alt"></i></button>
           </td>
         </tr>
 
-        <tr>
-          <td>Nurofen</td>
-          <td>IBUPROFENE</td>
-          <td>Analgésiques et Anti-inflammatoires</td>
-          <td>Sanofi Pasteur</td>
-          <td>1C</td>
-          <td>13.45$</td>
-          <td>
-            <button (click)="moveEditMedicament()" type="button" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm"
-              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
-                class="fas fa-trash-alt"></i></button>
-          </td>
-        </tr>
+
 
       </tbody>
       <tfoot>
@@ -64,51 +49,10 @@
         </tr>
       </tfoot>
     </table>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addMedicament">Ajouter</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addMedicament"><i
+        class="fas fa-plus-circle"></i> Créer</button>
 
   </div>
 </div>
 
-
-<div class="modal fade" id="addMedicament" data-backdrop="false" tabindex="-1" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-add-medicament></app-add-medicament>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="editMedicament" data-backdrop="false" tabindex="-1" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-edit-medicament></app-edit-medicament>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-      </div>
-    </div>
-  </div>
-</div>
+<app-modal-medicament></app-modal-medicament>

@@ -2,24 +2,32 @@
 
 export default class Buy {
     id: number
-    supplier: string
-    purchase_invoiceNo: string
-    purchase_status: string
+    manufacturer_id: string
     purchase_date: string
+    chalan_no: string
+    purchase_details: string
+    paytype: string
+    bank_id: string
+
 
     constructor(
         id: number,
-        supplier: string,
-        purchase_invoiceNo: string,
-        purchase_status: string,
-        purchase_date: string
+        manufacturer_id: string,
+        purchase_date: string,
+        chalan_no: string,
+        purchase_details: string,
+        paytype: string,
+        bank_id: string
     ) {
         this.id = id
-        this.supplier = supplier
-        this.purchase_invoiceNo = purchase_invoiceNo
-        this.purchase_status = purchase_status
+        this.manufacturer_id = manufacturer_id
         this.purchase_date = purchase_date
+        this.chalan_no = chalan_no
+        this.purchase_details = purchase_details
+        this.paytype = paytype
+        this.bank_id = bank_id
     }
+
 
 
 

@@ -43,6 +43,7 @@ export class ClientComponent extends URLLoader implements OnInit {
   edit(id) {
     this.setId(id)
     this.clientTestService.ID.next(id.toString())
+    // this.moveEditClient()
   }
 
   delete(id) {

@@ -43,6 +43,7 @@ export class CategoryComponent extends URLLoader implements OnInit {
   edit(id) {
     this.setId(id)
     this.categoryTestService.ID.next(id.toString())
+
   }
 
   delete(id) {
@@ -50,6 +51,7 @@ export class CategoryComponent extends URLLoader implements OnInit {
     if (r) {
       this.setId(id)
       this.categoryTestService.remove(parseInt(id))
+      console.log(id)
       super.show('Confirmation', this.messageService.confirmationMessages.delete, 'success')
     }
 

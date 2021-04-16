@@ -15,8 +15,9 @@
                     </i>
                 </label>
                 <div class="col-sm-8">
-                    <input [(ngModel)]="model.manufacturer_name" class="form-control" name="manufacturer_name"
-                        id="manufacturer_name" type="text" placeholder="Nom du Fabricant" required="" tabindex="1">
+                    <input [(ngModel)]="model.manufacturer_name" value="{{model.manufacturer_name}}"
+                        class="form-control" name="manufacturer_name" id="manufacturer_name" type="text"
+                        placeholder="Nom du Fabricant" required="" tabindex="1">
 
 
                 </div>
@@ -31,8 +32,8 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input [(ngModel)]="model.mobile" class="form-control" name="mobile" id="mobile" type="number"
-                        placeholder="Fabricant Mobile" min="0" tabindex="2">
+                    <input [(ngModel)]="model.mobile" value="{{model.mobile}}" class="form-control" name="mobile"
+                        id="mobile" type="number" placeholder="Fabricant Mobile" min="0" tabindex="2">
 
 
 
@@ -48,8 +49,8 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input [(ngModel)]="model.phone" class="form-control" name="phone" id="phone" type="number"
-                        placeholder="Téléphone" min="0" tabindex="2">
+                    <input [(ngModel)]="model.phone" value="{{model.phone}}" class="form-control" name="phone"
+                        id="phone" type="number" placeholder="Téléphone" min="0" tabindex="2">
 
 
 
@@ -65,21 +66,13 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="email" id="email" type="email" placeholder="Email" tabindex="2">
+                    <input [(ngModel)]="model.email" value="{{model.email}}" class="form-control" name="email"
+                        id="email" type="email" placeholder="Email" tabindex="2">
 
 
 
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
 
 
             <div class="form-group row">
@@ -89,12 +82,8 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input [(ngModel)]="model.fax" class="form-control" name="fax" id="fax" type="text"
-                        placeholder="Fax">
-
-
-
-
+                    <input [(ngModel)]="model.fax" value="{{model.fax}}" class="form-control" name="fax" id="fax"
+                        type="text" placeholder="Fax">
                 </div>
             </div>
 
@@ -106,11 +95,8 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input [(ngModel)]="model.city" class="form-control" name="city" id="city" type="text"
-                        placeholder="Ville">
-
-
-
+                    <input [(ngModel)]="model.city" value="{{model.city}}" class="form-control" name="city" id="city"
+                        type="text" placeholder="Ville">
                 </div>
             </div>
 
@@ -125,12 +111,8 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input [(ngModel)]="model.state" class="form-control" name="state" id="state" type="text"
-                        placeholder="Etat">
-
-
-
-
+                    <input [(ngModel)]="model.state" value="{{model.state}}" class="form-control" name="state"
+                        id="state" type="text" placeholder="Etat">
                 </div>
             </div>
 
@@ -142,10 +124,8 @@
                     </font><i class="text-danger"></i>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="zip" id="zip" type="text" placeholder="Code postal">
-
-
-
+                    <input [(ngModel)]="model.zip" value="{{model.zip}}" class="form-control" name="zip" id="zip"
+                        type="text" placeholder="Code postal">
                 </div>
             </div>
 
@@ -159,8 +139,8 @@
                 </label>
                 <div class="col-sm-8">
 
-                    <select name="country" class="form-control select2-hidden-accessible" tabindex="-1"
-                        aria-hidden="true">
+                    <select [(ngModel)]="model.country" name="country" class="form-control select2-hidden-accessible"
+                        tabindex="-1" aria-hidden="true">
                         <option value=" ">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Choisissez le pays</font>
@@ -185,39 +165,10 @@
                     </font>
                 </label>
                 <div class="col-sm-8">
-                    <textarea class="form-control" name="address" id="address " rows="2"
-                        placeholder="Adresse du fabricant"></textarea>
+                    <textarea [(ngModel)]="model.address" value="{{model.address}}" class="form-control" name="address"
+                        id="address " rows="2" placeholder="Adresse du fabricant"></textarea>
                 </div>
             </div>
-
-
-
-            <div class="form-group row">
-                <label for="address2 " class="col-sm-4 col-form-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Adresse 2</font>
-                    </font>
-                </label>
-                <div class="col-sm-8">
-                    <textarea class="form-control" name="address2" id="address2" rows="2"
-                        placeholder="Adresse du fabricant2"></textarea>
-                </div>
-            </div>
-
-
-
-            <div class="form-group row">
-                <label for="details" class="col-sm-4 col-form-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Détails du fabricant</font>
-                    </font>
-                </label>
-                <div class="col-sm-8">
-                    <textarea class="form-control" name="details" id="details" rows="2"
-                        placeholder="Détails du fabricant" tabindex="4"></textarea>
-                </div>
-            </div>
-
 
             <div class="form-group row">
                 <label for="previous_balance" class="col-sm-4 col-form-label">
@@ -226,8 +177,9 @@
                     </font>
                 </label>
                 <div class="col-sm-8">
-                    <input class="form-control" name="previous_balance" id="previous_balance" type="text" min="0"
-                        placeholder="Solde précédent" tabindex="5">
+                    <input [(ngModel)]="model.previous_balance" value="{{model.previous_balance}}" class="form-control"
+                        name="previous_balance" id="previous_balance" type="text" min="0" placeholder="Solde précédent"
+                        tabindex="5">
 
                 </div>
             </div>
@@ -238,10 +190,7 @@
                 <i class="fas fa-save"></i>
                 Sauvegarder
             </button>
-            <button type="button" class="btn btn-danger">
-                <i class="fas fa-times"></i>
-                Annuler
-            </button>
+
         </div>
     </div>
 </form>

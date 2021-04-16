@@ -7,7 +7,7 @@
       <thead>
         <tr>
           <th>Nom client</th>
-          <th>Adresse</th>
+          <th>Ville</th>
           <th>Téléphone</th>
           <th>Email</th>
           <th>Actions</th>
@@ -17,15 +17,13 @@
 
         <tr *ngFor="let item of clients$">
           <td>{{item.customer_name}}</td>
-          <td>32, Boulevard de Normandie
-            38600 FONTAINE</td>
+          <td>{{item.city}}</td>
           <td>{{item.phone}}</td>
           <td>{{item.email}}</td>
           <td>
-            <button (click)="moveEditClient()" type="button" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm"
-              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
+            <button (click)="edit(item.id)" type="button" data-toggle="modal" data-target="#editClient"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="delete(item.id)"><i
                 class="fas fa-trash-alt"></i></button>
           </td>
         </tr>
@@ -34,56 +32,16 @@
       <tfoot>
         <tr>
           <th>Nom client</th>
-          <th>Adresse</th>
+          <th>Ville</th>
           <th>Téléphone</th>
           <th>Email</th>
           <th>Actions</th>
         </tr>
       </tfoot>
     </table>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addClient">Ajouter</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addClient"><i
+        class="fas fa-plus-circle"></i> Créer</button>
 
   </div>
 </div>
-
-<div class="modal fade" id="addClient" tabindex="-1" data-backdrop="false" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-add-client></app-add-client>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="editClient" tabindex="-1" data-backdrop="false" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-edit-client></app-edit-client>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-      </div>
-    </div>
-  </div>
-</div>
+<app-modal-client></app-modal-client>

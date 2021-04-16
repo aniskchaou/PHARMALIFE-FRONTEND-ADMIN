@@ -13,8 +13,9 @@
                 </i>
             </label>
             <div class="col-sm-6">
-                <input [(ngModel)]="model.supplier_name" class="form-control" name="supplier_name" id="supplier_name"
-                    type="text" placeholder="Nom du fournisseur" required="" tabindex="1" aria-required="true">
+                <input [(ngModel)]="model.supplier_name" value="{{model.supplier_name}}" class="form-control"
+                    name="supplier_name" id="supplier_name" type="text" placeholder="Nom du fournisseur" required=""
+                    tabindex="1" aria-required="true">
             </div>
         </div>
 
@@ -25,8 +26,8 @@
                 </font><i class="text-danger"></i>
             </label>
             <div class="col-sm-6">
-                <input [(ngModel)]="model.mobile" class="form-control" name="mobile" id="mobile" type="number"
-                    placeholder="Mobile fournisseur" min="0" tabindex="2">
+                <input [(ngModel)]="model.mobile" value="{{model.mobile}}" class="form-control" name="mobile"
+                    id="mobile" type="number" placeholder="Mobile fournisseur" min="0" tabindex="2">
             </div>
         </div>
 
@@ -37,8 +38,8 @@
                 </font>
             </label>
             <div class="col-sm-6">
-                <textarea [(ngModel)]="model.address" class="form-control" name="address" id="address " rows="3"
-                    placeholder="Adresse du fournisseur" tabindex="3"></textarea>
+                <textarea [(ngModel)]="model.address" value="{{model.address}}" class="form-control" name="address"
+                    id="address " rows="3" placeholder="Adresse du fournisseur" tabindex="3"></textarea>
             </div>
         </div>
 
@@ -49,8 +50,8 @@
                 </font>
             </label>
             <div class="col-sm-6">
-                <textarea [(ngModel)]="model.details" class="form-control" name="details" id="details" rows="3"
-                    placeholder="Détails du fournisseur" tabindex="4"></textarea>
+                <textarea [(ngModel)]="model.details" value="{{model.details}}" class="form-control" name="details"
+                    id="details" rows="3" placeholder="Détails du fournisseur" tabindex="4"></textarea>
             </div>
         </div>
         <div class="form-group row">
@@ -60,32 +61,18 @@
                 </font>
             </label>
             <div class="col-sm-6">
-                <input [(ngModel)]="model.previous_balance" type="number" class="form-control" name="previous_balance"
-                    placeholder="Solde précédent" tabindex="5">
+                <input [(ngModel)]="model.previous_balance" value="{{model.previous_balance}}" type="number"
+                    class="form-control" name="previous_balance" placeholder="Solde précédent" tabindex="5">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="example-text-input" class="col-sm-4 col-form-label"></label>
             <div class="col-sm-6">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;"><input type="submit" id="add-supplier"
-                                    class="btn btn-primary btn-large" name="add-supplier" value="Enregistrer "
-                                    tabindex="6"></font>
-                        </font>
-                    </font>
-                </font>
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;"><input (click)="edit()" type="submit"
-                                    value="Enregistrer et ajouter un autre" name="add-supplier-another"
-                                    class="btn btn-large btn-success" id="add-supplier-another" tabindex="5"></font>
-                        </font>
-                    </font>
-                </font>
+                <button (click)="edit()" type="button" class="btn btn-info">
+                    <i class="fas fa-save"></i>
+                    Sauvegarder
+                </button>
             </div>
         </div>
     </div>

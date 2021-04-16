@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { URLLoader } from 'src/app/content/main/configs/URLLoader';
 import ServiceMessage from 'src/app/content/main/messages/ServiceMessage';
 import ServiceTestService from 'src/app/content/main/mocks/ServiceTestService';
@@ -17,7 +18,8 @@ export class EditServiceComponent extends URLLoader implements OnInit {
 
   constructor(private categoryTestService:
     ServiceTestService,
-    private message: ServiceMessage) {
+    private message: ServiceMessage,
+    private _router: Router) {
     super()
     this.model = new Service(0, '', '', '', '')
   }
@@ -26,7 +28,7 @@ export class EditServiceComponent extends URLLoader implements OnInit {
   ngOnInit(): void {
 
     this.categoryTestService.ID.subscribe(idd => {
-      this.model = this.categoryTestService.get(idd)
+      this.model = this.categoryTestService.get(parseInt(idd))
       if (this.model == undefined) {
         this.model = new Service(0, '', '', '', '')
       }
@@ -36,8 +38,12 @@ export class EditServiceComponent extends URLLoader implements OnInit {
   edit() {
     this.categoryTestService.update(this.model)
     super.show('Confirmation', this.message.confirmationMessages.edit, 'success')
+    this.moveToService()
 
+  }
 
+  moveToService() {
+    this._router.navigate(['/service']);
   }
 
 }

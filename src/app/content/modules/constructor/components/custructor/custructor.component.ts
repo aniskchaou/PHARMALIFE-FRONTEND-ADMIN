@@ -42,6 +42,7 @@ export class CustructorComponent extends URLLoader implements OnInit {
   edit(id) {
     this.setId(id)
     this.constructorTestService.ID.next(id.toString())
+    //this.moveEditConstructor()
   }
 
   delete(id) {

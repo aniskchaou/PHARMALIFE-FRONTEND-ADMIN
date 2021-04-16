@@ -41,6 +41,7 @@ export class TypeComponent extends URLLoader implements OnInit {
   edit(id) {
     this.setId(id)
     this.typeTestService.ID.next(id.toString())
+
   }
 
   delete(id) {

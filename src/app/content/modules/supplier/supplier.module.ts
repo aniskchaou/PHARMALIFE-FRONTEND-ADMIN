@@ -5,10 +5,11 @@ import { SupplierComponent } from './components/supplier/supplier.component';
 import { EditSupplierComponent } from './components/edit-supplier/edit-supplier.component';
 import { ViewSupplierComponent } from './components/view-supplier/view-supplier.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalSupplierComponent } from './components/modal-supplier/modal-supplier.component';
 
 
 @NgModule({
-  declarations: [AddSupplierComponent, SupplierComponent, EditSupplierComponent, ViewSupplierComponent],
+  declarations: [ModalSupplierComponent, AddSupplierComponent, SupplierComponent, EditSupplierComponent, ViewSupplierComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,

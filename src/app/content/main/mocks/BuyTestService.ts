@@ -7,7 +7,15 @@ import { BehaviorSubject } from "rxjs";
 })
 export default class BuyTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _buy = []
+    _buy = [{
+        "id": 1,
+        "manufacturer_id": "string",
+        "purchase_date": "string",
+        "chalan_no": "string",
+        "purchase_details": "string",
+        "paytype": "string",
+        "bank_id": "string"
+    }]
     static id = 0
 
     public getAll() {
@@ -32,10 +40,8 @@ export default class BuyTestService implements Service {
 
     public remove(id) {
 
-        var index = this._buy.findIndex(item => item.id === id);
-        if (index != -1) {
-            this._buy.splice(index, 1);
-        }
+        var buy = this.get(id)
+        this._buy.splice(this._buy.indexOf(buy), 1);
     };
 
 

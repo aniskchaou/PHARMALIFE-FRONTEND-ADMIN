@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Company from '../../main/configs/company';
+import CurrentUser from '../../main/configs/const';
 
 @Component({
   selector: 'app-configuration',
@@ -9,6 +11,8 @@ export class ConfigurationComponent implements OnInit {
 
   constructor() { }
 
+  entreprise = new Company()
+  user = new CurrentUser()
   ngOnInit(): void {
   }
 

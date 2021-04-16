@@ -14,9 +14,8 @@
         </label>
         <div class="col-sm-6">
             <input [(ngModel)]="model.category_name" class="form-control" name="category_name" id="category_name"
-                type="text" placeholder="Nom de catégorie" required="" aria-required="true">
-
-
+                value="{{model.category_name}}" type="text" placeholder="Nom de catégorie" required=""
+                aria-required="true">
 
         </div>
 
@@ -25,10 +24,6 @@
             <button (click)="edit()" type="button" class="btn btn-info">
                 <i class="fas fa-save"></i>
                 Sauvegarder
-            </button>
-            <button type="button" class="btn btn-danger">
-                <i class="fas fa-times"></i>
-                Annuler
             </button>
         </div>
     </div>

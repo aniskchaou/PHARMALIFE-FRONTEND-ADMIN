@@ -41,6 +41,7 @@ export class SupplierComponent extends URLLoader implements OnInit {
   edit(id) {
     this.setId(id)
     this.supplierTestService.ID.next(id.toString())
+    // this.moveEditSupplier()
   }
 
   delete(id) {

@@ -1,10 +1,10 @@
 <form class="form-vertical" id="validate" name="insert_purchase" enctype="multipart/form-data" method="post"
     accept-charset="utf-8" novalidate="novalidate">
-    <input type="hidden" name="csrf_test_name" value="6ea5babaa8a9985f88b3a90fab3fbf4d">
-
 
     <div class="row" id="manufacturer_info">
         <div class="col-sm-6">
+
+
             <div class="form-group row">
                 <label for="manufacturer_sss" class="col-sm-3 col-form-label">
                     <font style="vertical-align: inherit;">
@@ -16,9 +16,8 @@
                     </i>
                 </label>
                 <div class="col-sm-9">
-                    <select name="manufacturer_id" id="manufacturer_id" class="form-control select2-hidden-accessible"
-                        required="required" tabindex="-1"
-                        onchange="if (!window.__cfRLUnblockHandlers) return false; product_pur_or_list()"
+                    <select [(ngModel)]="model.manufacturer_id" name="manufacturer_id" id="manufacturer_id"
+                        class="form-control select2-hidden-accessible" required="required" tabindex="-1"
                         aria-hidden="true" aria-required="true">
 
 
@@ -37,54 +36,14 @@
                                 <font style="vertical-align: inherit;">Farto &amp; Deto Pharmaceuticals Ltd</font>
                             </font>
                         </option>
-                        <option value="3">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Bexilo</font>
-                            </font>
-                        </option>
-                        <option value="4">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">ACL</font>
-                            </font>
-                        </option>
-                        <option value="5">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">MPL Pharma</font>
-                            </font>
-                        </option>
-                        <option value="6">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">GCL Pharmaceuticals Ltd</font>
-                            </font>
-                        </option>
-                        <option value="7">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Laboratoires Std Ltd.</font>
-                            </font>
-                        </option>
-                        <option value="8">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Advlent </font>
-                            </font>
-                        </option>
-                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                        style="width: 358.875px;"><span class="selection"><span
-                                class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true"
-                                aria-expanded="false" tabindex="1"
-                                aria-labelledby="select2-manufacturer_id-container"><span
-                                    class="select2-selection__rendered" id="select2-manufacturer_id-container"><span
-                                        class="select2-selection__placeholder">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Sélectionnez l'option</font>
-                                        </font>
-                                    </span></span><span class="select2-selection__arrow" role="presentation"><b
-                                        role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                            aria-hidden="true"></span></span>
+
+                    </select>
                 </div>
 
 
             </div>
         </div>
+
 
         <div class="col-sm-6">
             <div class="form-group row">
@@ -98,12 +57,17 @@
                     </i>
                 </label>
                 <div class="col-sm-8">
-                    <input type="text" tabindex="2" class="form-control datepicker hasDatepicker" name="purchase_date"
-                        value="2020-12-18" id="purdate" required="" aria-required="true">
+                    <input [(ngModel)]="model.purchase_date" type="text" tabindex="2"
+                        class="form-control datepicker hasDatepicker" name="purchase_date" value="2020-12-18"
+                        id="purdate" required="" aria-required="true">
+
+
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <div class="row">
         <div class="col-sm-6">
@@ -118,11 +82,13 @@
                     </i>
                 </label>
                 <div class="col-sm-9">
-                    <input type="text" tabindex="3" class="form-control" name="chalan_no" placeholder="No de facture"
-                        id="invoice_no" required="" aria-required="true">
+                    <input formControlName="supplier" type="text" tabindex="3" class="form-control" name="chalan_no"
+                        placeholder="No de facture" id="invoice_no" required="" aria-required="true">
                 </div>
             </div>
         </div>
+
+
 
         <div class="col-sm-6">
             <div class="form-group row">
@@ -132,14 +98,21 @@
                     </font>
                 </label>
                 <div class="col-sm-8">
-                    <textarea class="form-control" tabindex="4" id="adress" name="purchase_details"
-                        placeholder=" Détails" rows="1"></textarea>
+                    <textarea [(ngModel)]="model.purchase_details" class="form-control" tabindex="4" id="adress"
+                        name="purchase_details" placeholder=" Détails" rows="1"></textarea>
                 </div>
             </div>
         </div>
+
+
     </div>
     <div class="row">
+
+
+
         <div class="col-sm-6" id="payment_from_1">
+
+
             <div class="form-group row">
                 <label for="payment_type" class="col-sm-3 col-form-label">
                     <font style="vertical-align: inherit;">
@@ -151,9 +124,8 @@
                     </i>
                 </label>
                 <div class="col-sm-9">
-                    <select name="paytype" class="form-control select2-hidden-accessible" required=""
-                        onchange="if (!window.__cfRLUnblockHandlers) return false; bank_paymet(this.value)"
-                        tabindex="-1" aria-hidden="true" aria-required="true">
+                    <select [(ngModel)]="model.paytype" name="paytype" class="form-control select2-hidden-accessible"
+                        required="" tabindex="-1" aria-hidden="true" aria-required="true">
                         <option value="1">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Paiement en espèces</font>
@@ -169,22 +141,7 @@
                                 <font style="vertical-align: inherit;">Paiement dû</font>
                             </font>
                         </option>
-                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                        style="width: 358.875px;"><span class="selection"><span
-                                class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true"
-                                aria-expanded="false" tabindex="5" aria-labelledby="select2-paytype-86-container"><span
-                                    class="select2-selection__rendered" id="select2-paytype-86-container"
-                                    title="Paiement en espèces"><span class="select2-selection__clear">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">×</font>
-                                        </font>
-                                    </span>
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Paiement en espèces</font>
-                                    </font>
-                                </span><span class="select2-selection__arrow" role="presentation"><b
-                                        role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                            aria-hidden="true"></span></span>
+                    </select>
 
 
 
@@ -192,32 +149,26 @@
 
             </div>
         </div>
+
+
         <div class="col-sm-6" id="bank_div" style="display: none;">
             <div class="form-group row">
                 <label for="bank" class="col-sm-4 col-form-label">Bank <i class="text-danger">*</i></label>
                 <div class="col-sm-8">
-                    <select name="bank_id" class="form-control select2-hidden-accessible" id="bank_id" tabindex="-1"
-                        aria-hidden="true">
+                    <select [(ngModel)]="model.bank_id" name="bank_id" class="form-control select2-hidden-accessible"
+                        id="bank_id" tabindex="-1" aria-hidden="true">
                         <option value="">Select Location</option>
                         <option value="OJZ4ZM2W9T">Demo international Bank </option>
                         <option value="A1IZI9DBRW">Netro Bank Ltd </option>
-                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                        style="width: auto;"><span class="selection"><span
-                                class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true"
-                                aria-expanded="false" tabindex="0" aria-labelledby="select2-bank_id-container"><span
-                                    class="select2-selection__rendered" id="select2-bank_id-container"><span
-                                        class="select2-selection__placeholder">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Sélectionnez l'option</font>
-                                        </font>
-                                    </span></span><span class="select2-selection__arrow" role="presentation"><b
-                                        role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                            aria-hidden="true"></span></span>
+                    </select>
 
                 </div>
 
             </div>
         </div>
+
+
+
     </div>
 
     <div class="table-responsive">
@@ -317,17 +268,13 @@
 
                     <td class="text-right">
                         <input type="text" name="product_quantity[]" id="quantity_1"
-                            class="form-control text-right store_cal_1"
-                            onkeyup="if (!window.__cfRLUnblockHandlers) return false; calculate_store(1),checkqty(1);"
-                            onchange="if (!window.__cfRLUnblockHandlers) return false; calculate_store(1);"
-                            placeholder="0,00" value="" min="0" tabindex="9" required="required" aria-required="true">
+                            class="form-control text-right store_cal_1" placeholder="0,00" value="" min="0" tabindex="9"
+                            required="required" aria-required="true">
                     </td>
                     <td class="test">
-                        <input type="text" name="product_rate[]"
-                            onkeyup="if (!window.__cfRLUnblockHandlers) return false; calculate_store(1),checkqty(1);"
-                            onchange="if (!window.__cfRLUnblockHandlers) return false; calculate_store(1);"
-                            id="product_rate_1" class="form-control product_rate_1 text-right" placeholder="0,00"
-                            value="" min="0" tabindex="10" required="required" aria-required="true">
+                        <input type="text" name="product_rate[]" id="product_rate_1"
+                            class="form-control product_rate_1 text-right" placeholder="0,00" value="" min="0"
+                            tabindex="10" required="required" aria-required="true">
                     </td>
 
 
@@ -350,8 +297,7 @@
                     <td colspan="2">
 
 
-                        <input type="hidden" name="baseUrl" class="baseUrl"
-                            value="https://pharmacyv5.bdtask.com/pharmacare-9.3_demo/">
+                        <input type="hidden" name="baseUrl" class="baseUrl">
                     </td>
                     <td class="text-right" colspan="4"><b>
                             <font style="vertical-align: inherit;">
@@ -364,7 +310,6 @@
                     </td>
                     <td>
                         <button id="add_invoice_item" type="button" class="btn btn-info" name="add-invoice-item"
-                            onclick="if (!window.__cfRLUnblockHandlers) return false; addPurchaseOrderField1('addPurchaseItem')"
                             tabindex="12"><i class="fa fa-plus"></i></button>
                     </td>
                 </tr>
@@ -372,17 +317,10 @@
         </table>
     </div>
 
-    <div class="form-group row">
-        <div class="col-sm-6">
-            <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;"><input type="submit" id="add_purchase"
-                                class="btn btn-primary btn-large" name="add-purchase" value="Soumettre"></font>
-                    </font>
-                </font>
-            </font>
-
-        </div>
+    <div class="col-sm-3">
+        <button (click)="edit()" type="button" class="btn btn-info">
+            <i class="fas fa-save"></i>
+            Sauvegarder
+        </button>
     </div>
 </form>

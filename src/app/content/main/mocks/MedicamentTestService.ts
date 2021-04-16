@@ -7,7 +7,24 @@ import Service from "../interfaces/Service";
 })
 export default class MedicamentTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _medicament = []
+    _medicament = [{
+        "id": 1,
+        "product_name": "Nurofen",
+        "generic_name": "IBUPROFENE",
+        "box_size": "string",
+        "unit": "string",
+        "product_location": "string",
+        "description": "string",
+        "type_name": "Analgésiques et Anti-inflammatoires",
+        "category_id": "string",
+        "price": "13",
+        "tax": "string",
+        "manufacturer_id": "Sanofi Pasteur",
+        "manufacturer_price": "string"
+    }]
+
+
+
     static id = 0
 
     public getAll() {
@@ -32,7 +49,8 @@ export default class MedicamentTestService implements Service {
     };
 
     public remove(id) {
-        this._medicament.splice(id, 1);
+        var medicament = this.get(id)
+        this._medicament.splice(this._medicament.indexOf(medicament), 1);
     };
 
 

@@ -5,11 +5,12 @@ import { EditMedicamentComponent } from './components/edit-medicament/edit-medic
 import { MedicamentComponent } from './components/medicament/medicament.component';
 import { ViewMedicamentComponent } from './components/view-medicament/view-medicament.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalMedicamentComponent } from './components/modal-medicament/modal-medicament.component';
 
 
 
 @NgModule({
-  declarations: [AddMedicamentComponent, EditMedicamentComponent, MedicamentComponent, ViewMedicamentComponent],
+  declarations: [ModalMedicamentComponent, AddMedicamentComponent, EditMedicamentComponent, MedicamentComponent, ViewMedicamentComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,

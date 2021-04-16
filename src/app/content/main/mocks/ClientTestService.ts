@@ -8,7 +8,16 @@ import Service from "../interfaces/Service";
 export default class ClientTestService implements Service {
 
     public ID = new BehaviorSubject<string>(null);
-    _client = []
+    _client = [{
+        "id": 1,
+        "customer_name": "Leverett C Lebel",
+        "email": "8ogxgpulbfw@temporary-mail.net",
+        "mobile": "06 34 24 55 23",
+        "phone": "03 44 53 56 66",
+        "city": "Paris",
+        "zip": "75000",
+        "country": "France"
+    }]
     static id = 0
 
     public getAll() {
@@ -33,7 +42,8 @@ export default class ClientTestService implements Service {
     };
 
     public remove(id) {
-        this._client.splice(id, 1);
+        var client = this.get(id)
+        this._client.splice(this._client.indexOf(client), 1);
     };
 
 

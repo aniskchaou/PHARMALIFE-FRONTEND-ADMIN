@@ -13,8 +13,8 @@
                 </i>
             </label>
             <div class="col-sm-6">
-                <input [(ngModel)]="model.service_name" class="form-control" name="service_name" id="service_name"
-                    type="text" placeholder="Nom du service" required="">
+                <input [(ngModel)]="model.service_name" value="{{model.service_name}}" class="form-control"
+                    name="service_name" id="service_name" type="text" placeholder="Nom du service" required="">
             </div>
         </div>
 
@@ -29,8 +29,8 @@
                 </i>
             </label>
             <div class="col-sm-6">
-                <input [(ngModel)]="model.charge" class="form-control" name="charge" id="charge" type="text"
-                    placeholder="Charge" required="">
+                <input [(ngModel)]="model.charge" value="{{model.charge}}" class="form-control" name="charge"
+                    id="charge" type="text" placeholder="Charge" required="">
             </div>
         </div>
 
@@ -41,8 +41,8 @@
                 </font><i class="text-danger"></i>
             </label>
             <div class="col-sm-6">
-                <textarea [(ngModel)]="model.description" class="form-control" name="description" id="description"
-                    placeholder="La description"></textarea>
+                <textarea [(ngModel)]="model.description" value="{{model.description}}" class="form-control"
+                    name="description" id="description" placeholder="La description"></textarea>
             </div>
         </div>
 
@@ -53,15 +53,10 @@
         <div class="form-group row">
             <label for="example-text-input" class="col-sm-4 col-form-label"></label>
             <div class="col-sm-6">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;"><input (click)="edit()" type="submit"
-                                    id="add-service" class="btn btn-success btn-large" name="add-service"
-                                    value="enregistrer"></font>
-                        </font>
-                    </font>
-                </font>
+                <button (click)="edit()" type="button" class="btn btn-info">
+                    <i class="fas fa-save"></i>
+                    Sauvegarder
+                </button>
             </div>
         </div>
     </div>

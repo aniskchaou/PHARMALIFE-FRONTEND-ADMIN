@@ -6,11 +6,12 @@ import { ClientComponent } from './components/client/client.component';
 import { EditBuyComponent } from '../buy/components/edit-buy/edit-buy.component';
 import { EditClientComponent } from './components/edit-client/edit-client.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalClientComponent } from './components/modal-client/modal-client.component';
 
 
 
 @NgModule({
-  declarations: [ViewClientComponent, AddClientComponent, ClientComponent, EditClientComponent],
+  declarations: [ViewClientComponent, AddClientComponent, ClientComponent, EditClientComponent, ModalClientComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,

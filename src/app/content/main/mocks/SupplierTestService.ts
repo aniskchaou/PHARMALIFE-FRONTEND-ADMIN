@@ -7,7 +7,17 @@ import Service from "../interfaces/Service";
 })
 export default class SupplierTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _supplier = []
+    _supplier = [{
+        "id": 1,
+        "supplier_name": "Eugène Boileau",
+        "mobile": "05.41.65.19.71",
+        "address": "rue Pierre De Coubertin 31100 TOULOUSE",
+        "details": "string",
+        "previous_balance": "12"
+    }]
+
+
+
     static id = 0
 
     public getAll() {
@@ -32,7 +42,8 @@ export default class SupplierTestService implements Service {
     };
 
     public remove(id) {
-        this._supplier.splice(id, 1);
+        var supplier = this.get(id)
+        this._supplier.splice(this._supplier.indexOf(supplier), 1);
     };
 
 

@@ -363,17 +363,10 @@
 
         <div class="form-group row">
             <div class="col-sm-6">
-
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;"><input (click)="edit()" type="submit" id="add-product"
-                            class="btn btn-primary btn-large" name="add-product" value="Enregistrer " tabindex="14">
-                    </font>
-                </font>
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;"><input type="submit" value="Enregistrer et ajouter un autre"
-                            name="add-product-another" class="btn btn-large btn-success" id="add-product-another"
-                            tabindex="15"></font>
-                </font>
+                <button (click)="edit()" type="button" class="btn btn-info">
+                    <i class="fas fa-save"></i>
+                    Sauvegarder
+                </button>
             </div>
         </div>
     </div>

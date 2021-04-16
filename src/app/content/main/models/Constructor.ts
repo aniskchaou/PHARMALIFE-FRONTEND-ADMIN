@@ -1,5 +1,4 @@
 
-
 export default class Constructor {
     id: number
     manufacturer_name: string
@@ -9,6 +8,10 @@ export default class Constructor {
     city: string
     state: string
     country: string
+    email: string
+    zip: string
+    previous_balance: string
+    address: string
 
 
     constructor(
@@ -19,7 +22,11 @@ export default class Constructor {
         fax: string,
         city: string,
         state: string,
-        country: string
+        country: string,
+        email: string,
+        zip: string,
+        previous_balance: string,
+        address: string
     ) {
         this.id = id
         this.manufacturer_name = manufacturer_name
@@ -29,8 +36,11 @@ export default class Constructor {
         this.city = city
         this.state = state
         this.country = country
+        this.email = email
+        this.zip = zip
+        this.previous_balance = previous_balance
+        this.address = address
     }
-
 
 
 

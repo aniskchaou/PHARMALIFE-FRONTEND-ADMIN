@@ -20,8 +20,8 @@
           <td>23/1/20202</td>
           <td>123$</td>
           <td>
-            <button type="button" (click)="moveEditBuy()" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
+            <button data-toggle="modal" data-target="#editBuy" type="button" (click)="edit(1)"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
             <button type="button" class="btn btn-danger btn-sm"
               onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
                 class="fas fa-trash-alt"></i></button>
@@ -39,52 +39,10 @@
         </tr>
       </tfoot>
     </table>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addBuy">Ajouter</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addBuy"><i
+        class="fas fa-plus-circle"></i> Créer</button>
 
+    <app-modal-buy></app-modal-buy>
 
-  </div>
-</div>
-
-
-<div class="modal fade" id="addBuy" tabindex="-1" data-backdrop="false" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-add-buy></app-add-buy>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="editBuy" tabindex="-1" data-backdrop="false" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-edit-buy></app-edit-buy>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-
-      </div>
-    </div>
   </div>
 </div>

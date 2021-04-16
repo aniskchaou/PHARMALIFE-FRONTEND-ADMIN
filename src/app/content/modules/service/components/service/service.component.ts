@@ -46,6 +46,7 @@ export class ServiceComponent extends URLLoader implements OnInit {
   edit(id) {
     this.setId(id)
     this.serviceTestService.ID.next(id.toString())
+    // this.moveEditService()
   }
 
   delete(id) {

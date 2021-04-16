@@ -8,15 +8,18 @@ import Service from "../interfaces/Service";
 export default class CategoryTestService implements Service {
 
     public ID = new BehaviorSubject<string>(null);
-    _categorie = []
-    static id = 0
+    _categorie = [{
+        "id": 1,
+        "category_name": "string"
+    }]
+    static id = 1
 
     public getAll() {
         return this._categorie;
     }
 
     public get(id) {
-        return this._categorie.find(item => item.id === id);
+        return this._categorie.find(item => item.id == id);
     };
 
     public create(data) {
@@ -32,7 +35,8 @@ export default class CategoryTestService implements Service {
     };
 
     public remove(id) {
-        this._categorie.splice(id, 1);
+        let category = this.get(id)
+        this._categorie.splice(this._categorie.indexOf(category), 1);
     };
 
 

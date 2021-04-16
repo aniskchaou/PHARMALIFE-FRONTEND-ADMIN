@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
-  declarations: [ConfigurationComponent,LoginComponent,DashboardComponent],
+  declarations: [ConfigurationComponent, DashboardComponent],
   imports: [
     CommonModule
   ]

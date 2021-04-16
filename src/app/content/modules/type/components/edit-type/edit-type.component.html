@@ -9,17 +9,13 @@
         </i>
     </label>
     <div class="col-sm-4">
-        <input [(ngModel)]="model.type_name" class="form-control" name="type_name" id="type_name" type="text"
-            placeholder="Nom du type" required="" aria-required="true">
+        <input [(ngModel)]="model.type_name" value="{{model.type_name}}" class="form-control" name="type_name"
+            id="type_name" type="text" placeholder="Nom du type" required="" aria-required="true">
     </div>
-    <div class="col-sm-2">
-        <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;"><input (click)="edit()" type="submit" id="add-customer"
-                            class="btn btn-success btn-large" name="add-customer" value="enregistrer"></font>
-                </font>
-            </font>
-        </font>
+    <div class="col-sm-8">
+        <button (click)="edit()" type="button" class="btn btn-info">
+            <i class="fas fa-save"></i>
+            Sauvegarder
+        </button>
     </div>
 </div>
